@@ -63,7 +63,13 @@ button:active {
 button:focus {
 	outline: none;
 }
-
+button:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+/* Lo de abajo es que cambia de color dependiendo del boton */
+	/* background-color: white;
+	color: #1E88E5; */
+	cursor: pointer;
+}
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
