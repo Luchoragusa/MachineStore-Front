@@ -1,0 +1,7 @@
+<!-- Aca uso las app-card, entonces este seria como el padre que agrupa todas las tarjetas -->
+
+<article class="cards">
+    <ng-container *ngFor="let game of games" class="card"> <!-- Es como un foreach para cada game de games -->
+        <app-card></app-card>
+    </ng-container>
+</article>

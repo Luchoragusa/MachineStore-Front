@@ -1,0 +1,25 @@
+/* .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+    margin: 25px;
+}
+
+.card{
+    border:1px solid salmon;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap: 1rem;
+    margin: 200px;
+} */
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 100px;  /* Esto es muy villero, pero es para que al fijar la barra arriba no se superponga el contenido */
+    justify-content: center;
+}

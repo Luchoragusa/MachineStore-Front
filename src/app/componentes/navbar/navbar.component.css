@@ -1,4 +1,3 @@
-
 *{
 	margin: 0;
 	padding: 0;
@@ -7,15 +6,12 @@
 	border: none;
 	outline: none;
 }
-
 .navbar{
     background: linear-gradient(to right, #42A5F5, #0D47A1);
 }
 .nav-link.active {
     color: white;
   }
-
-
 .logo{
 	height: 50px;
 	width: 40px;
