@@ -12,7 +12,6 @@ import { FooterComponent } from './componentes/footer/footer.component';
 
 // Servicios
 import { GamesService } from './services/games.service';
-import { GameComponent } from './componentes/game/game.component';
 import { GamesComponent } from './componentes/games/games.component';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { GamesComponent } from './componentes/games/games.component';
     CardComponent,
     CardContainerComponent,
     FooterComponent,
-    GameComponent,
     GamesComponent
   ],
   imports: [  // van los modulos
