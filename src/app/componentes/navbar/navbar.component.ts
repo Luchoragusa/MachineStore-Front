@@ -12,18 +12,11 @@ export class NavbarComponent {
       label: 'Cards',
       path: '/cards',
     },
+    // Login
     {
-      label: 'Features',
-      path: '/features',
-    },
-    {
-      label: 'Pricing',
-      path: '/pricing',
-    },
-    {
-      label: 'Characters',
-      path: '/characters',
-    },
+      label: 'Login',
+      path: '/login',
+    }
   ];
 
   theme: Theme = 'light';

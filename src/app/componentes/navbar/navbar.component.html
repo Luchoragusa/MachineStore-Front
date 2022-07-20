@@ -10,12 +10,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li *ngFor="let item of navItems" class="nav-item">
-                    <a class="nav-link" aria-current="page"  [href]="item.path"> <!-- El HREF es dinamico, y depende del path asignado a cada item -->
+                    <a 
+                        class="nav-link" 
+                        aria-current="page"  
+                        [href]="item.path"
+                        routerLinkActive="active"
+                    > 
                         {{ item.label }}
                     </a>
+                    <!-- El HREF es dinamico, y depende del path asignado a cada item -->
                 </li>
             </ul>
         </div>
-        
+        <div class="searchbox">
+            <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Ingrese el juego" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>  
+        </div>   
+
+        <button class="btn btn-light ms-3">Login</button>
     </div>
 </nav>

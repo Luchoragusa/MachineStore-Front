@@ -11,9 +11,19 @@
 }
 .nav-link.active {
     color: white;
-  }
+}
+.nav-link:hover {
+	color: white;
+}
+
 .logo{
 	height: 50px;
 	width: 40px;
     margin: 8px 16px 8px 8px;
 }
+
+.searchbox {
+    width: 20%;
+    text-align :center;
+}
+
