@@ -1,6 +1,6 @@
 <main>  
     
-    <header>
+    <header *ngIf="getUser()">  <!-- al no haber user, no habilita el navbar al principio -->
         <app-navbar></app-navbar>
     </header>
     
