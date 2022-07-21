@@ -9,10 +9,6 @@ import { Theme, NavItem } from '../../interfaces/navbar';
 export class NavbarComponent {
   navItems: NavItem[] = [
     {
-      label: 'Cards',
-      path: '/cards',
-    },
-    {
       label: 'Login',
       path: '/login',
     }
