@@ -2,9 +2,6 @@ export interface Game {
     id: number;
     // image: string;
     name: string;
-    // species: string;
-    // status: string;
-    // originName: string;
     
     // Estos serian para el juego posta
     // id: number;
