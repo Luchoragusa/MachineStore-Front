@@ -14,13 +14,7 @@ export class CardDetailsComponent {
     private _activatedRoute: ActivatedRoute
     // private _gamesService: GamesService
   ) {
-    if (this._activatedRoute.snapshot.params['cardId']) {
-      this._activatedRoute.params.subscribe((params: Params) => {
-        if (params['cardId']) {
-          this.id = params['cardId'];
-        }
-      });
-    }
+    console.log(this._activatedRoute.snapshot.params['cardId']);
       
     }
 }

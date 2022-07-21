@@ -19,16 +19,16 @@ const routes: Routes = [
     {
         path: 'home',
         component: CardContainerComponent,
+    },
+    {
+        path: 'cards',
+        component: CardDetailsComponent,
         children: [
             {
                 path: ':cardId',
                 component: CardDetailsComponent
             }
         ]
-    },
-    {
-        path: 'cards',
-        component: CardDetailsComponent
     }
 ];
 

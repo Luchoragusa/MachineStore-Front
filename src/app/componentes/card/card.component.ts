@@ -15,6 +15,6 @@ export class CardComponent {
 
   onClick(): void {
     console.log('click', this.game);
-    this._router.navigate([`/home/${this.game.id}`]);
+    this._router.navigate(['/cards', this.game.id]);
   }
 }
