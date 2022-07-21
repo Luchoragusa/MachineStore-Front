@@ -12,7 +12,6 @@ export class NavbarComponent {
       label: 'Cards',
       path: '/cards',
     },
-    // Login
     {
       label: 'Login',
       path: '/login',

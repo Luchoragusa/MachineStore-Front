@@ -22,7 +22,7 @@ const routes: Routes = [
     },
     {
         path: 'cards',
-        component: CardDetailsComponent,
+        component: CardContainerComponent,
         children: [
             {
                 path: ':cardId',
