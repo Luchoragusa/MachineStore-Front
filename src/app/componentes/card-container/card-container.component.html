@@ -2,6 +2,6 @@
 
 <article class="cards">
     <ng-container *ngFor="let game of games" class="card"> <!-- Es como un foreach para cada game de games -->
-        <app-card></app-card>
+        <app-card [game]="game"></app-card> <!-- Aca le paso el juego q esta en el for ahora mismo -->
     </ng-container>
 </article>

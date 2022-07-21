@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Game } from 'src/app/interfaces/game';
 
 @Component({
@@ -6,13 +6,13 @@ import { Game } from 'src/app/interfaces/game';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
-  @Input() game!: Game;
-  
   constructor() { }
+  
+  @Input() game!: Game; // Aca recibo el game desde el padre
 
-  ngOnInit(): void {
+  onClick(): void {
+    console.log('click', this.game);
   }
-
 }

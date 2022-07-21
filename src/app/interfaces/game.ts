@@ -1,6 +1,6 @@
 export interface Game {
     id: number;
-    // image: string;
+    image: string;
     name: string;
     
     // Estos serian para el juego posta
