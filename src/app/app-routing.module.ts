@@ -20,6 +20,10 @@ const routes: Routes = [
                 component: CardDetailsComponent
             }
         ]
+    },
+    {
+        path: 'cards',
+        component: CardDetailsComponent
     }
 ];
 

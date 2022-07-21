@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { Game } from '../../interfaces/game';
-import { GamesService } from '../../services/games.service';
 
 @Component({
   selector: 'app-card-details',
@@ -11,8 +8,6 @@ import { GamesService } from '../../services/games.service';
 })
 export class CardDetailsComponent {
 
-  game!: Game;
-  subscription!: Subscription;
   id = '';
 
   constructor(

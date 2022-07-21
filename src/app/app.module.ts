@@ -16,6 +16,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 // Servicios
 import { GamesService } from './services/games.service';
 import { GamesComponent } from './componentes/games/games.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [ // van los componentes
@@ -32,10 +33,7 @@ import { GamesComponent } from './componentes/games/games.component';
   ],
   imports: [  // van los modulos
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', component: LoginComponent },
-      { path: 'home', component: CardContainerComponent }, // Esta es la ruta por defecto y carga el componente llamdo CardContainerComponent
-    ])
+    AppRoutingModule,
   ],
   providers: [
     { // esta es la forma de inyectar un servicio
