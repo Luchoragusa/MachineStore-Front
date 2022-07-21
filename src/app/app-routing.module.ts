@@ -21,14 +21,8 @@ const routes: Routes = [
         component: CardContainerComponent,
     },
     {
-        path: 'cards',
-        component: CardContainerComponent,
-        children: [
-            {
-                path: ':cardId',
-                component: CardDetailsComponent
-            }
-        ]
+        path: 'card/:cardId',
+        component: CardDetailsComponent,
     }
 ];
 

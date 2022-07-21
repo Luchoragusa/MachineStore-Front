@@ -21,10 +21,7 @@ export class CardDetailsComponent {
   ];
   game!: Game;
 
-  constructor(
-    private _activatedRoute: ActivatedRoute
-    // private _gamesService: GamesService
-  ) {
+  constructor(private _activatedRoute: ActivatedRoute) {
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {
         const filtered = this.games.filter(game => game.id.toString() === params['cardId']);
