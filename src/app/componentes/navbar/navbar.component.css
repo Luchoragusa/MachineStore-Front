@@ -9,6 +9,15 @@
 .navbar{
     background: linear-gradient(to right, #42A5F5, #0D47A1);
 }
+
+.nav-item{
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
 .nav-link.active {
     color: white;
 }
@@ -25,5 +34,16 @@
 .searchbox {
     width: 20%;
     text-align :center;
+	padding-right: 1em;
+}
+
+input[type=submit] {
+	background-color: #4fabd6;
+	border: none;
+	color: white;
+	padding: 6px 10px;
+	text-decoration: none;
+	margin: 1px 1px;
+	cursor: pointer;
 }
 

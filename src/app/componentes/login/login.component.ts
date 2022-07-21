@@ -10,18 +10,15 @@ import { Router } from '@angular/router';
 export class LoginComponent{
   show = false;
   
-  constructor(private _router: Router) { 
-    
-  }
+  constructor(private _router: Router) { }
 
   onClicksignUp(event: any){
     console.log('Pulsaste el boton para registrarte', event)
-    
     this.show = true;
   }
     
   onClicksignIn(event: any){
-    console.log('Pulsaste el boton para registrarte', event)
+    console.log('Pulsaste el boton para ingresar', event)
     this._router.navigate(['/home']);
     this.show = false;
   }
