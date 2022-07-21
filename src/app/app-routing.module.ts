@@ -21,7 +21,7 @@ const routes: Routes = [
         component: CardContainerComponent,
     },
     {
-        path: 'card/:cardId',
+        path: 'cards/:cardId',
         component: CardDetailsComponent,
     }
 ];
