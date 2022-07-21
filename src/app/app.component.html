@@ -1,14 +1,17 @@
 <main>  
+    
     <header>
         <app-navbar></app-navbar>
     </header>
     
     <section class="body">
-        <!-- <app-login></app-login> -->
-        <app-card-container></app-card-container>
+        <router-outlet>  <!-- Aqui se usa el router-outlet para que se muestre el componente que corresponda -->
+             <!-- Aca angular mete en componente que yo le digo, por ejemplo si el path es /games, entonces se carga el componente games.component.html dependieno de la url -->
+        </router-outlet>
     </section> 
 
     <footer>
         <app-footer></app-footer>
     </footer>
+
 </main>
