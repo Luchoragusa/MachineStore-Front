@@ -33,6 +33,7 @@ import { GamesComponent } from './componentes/games/games.component';
   imports: [  // van los modulos
     BrowserModule,
     RouterModule.forRoot([
+      { path: '', component: LoginComponent },
       { path: 'home', component: CardContainerComponent }, // Esta es la ruta por defecto y carga el componente llamdo CardContainerComponent
     ])
   ],
