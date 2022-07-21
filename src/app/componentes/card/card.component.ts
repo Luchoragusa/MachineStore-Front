@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Game } from 'src/app/interfaces/game';
 
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -9,7 +10,9 @@ import { Game } from 'src/app/interfaces/game';
 })
 export class CardComponent {
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router) { 
+
+  }
   
   @Input() game!: Game; // Aca recibo el game desde el padre
 
