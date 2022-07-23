@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'machineStore';
+
+  getUser() {
+    const user: any = (localStorage.getItem('user') || ''); 
+
+    if (user) {
+      return JSON.parse(user);
+    }
+
+    console.log(user); 
+    return user;
+  }
+
 }

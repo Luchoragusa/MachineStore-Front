@@ -17,7 +17,9 @@ export class LoginComponent{
     this.show = true;
   }
     
-  onClicksignIn(event: any){
+  onClicksignIn(event: any) {
+    localStorage.setItem('user', JSON.stringify({ id: 1, name: 'John' }));    // habilita el navbar con un usuario hardcodeado
+
     console.log('Pulsaste el boton para ingresar', event)
     this._router.navigate(['/home']);
     this.show = false;
