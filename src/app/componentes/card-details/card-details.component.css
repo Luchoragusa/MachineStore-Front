@@ -1,6 +1,36 @@
+<<<<<<< HEAD
 .conteiner {
     display: flex;
     flex-direction: row;
     margin-top: 75px;
     justify-content: center;
+=======
+.class {
+    max-width: 400px;
+}
+
+.card {
+    margin: auto;
+    max-width: 300px;
+    padding: 10px 10px 10px 10px;
+    background-color: #F5F5F5;
+    border: 2px solid #E3E3E3;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}	
+
+.previous {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #1b1b1b;
+    color: rgb(255, 255, 255);
+    border-radius: 5%;
+    position: absolute;
+}
+
+.previous:hover {
+    background-color: rgb(212, 212, 212);
+    color: rgb(0, 0, 0);
+>>>>>>> 31869d16f9f1fcb9d5b5d5bc0b6b2bb74a39449e
 }

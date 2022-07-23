@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .social-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -92,3 +93,14 @@
   .social-button--instagram::after {
     background: #c13584;
   }
+=======
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+>>>>>>> 31869d16f9f1fcb9d5b5d5bc0b6b2bb74a39449e

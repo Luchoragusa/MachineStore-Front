@@ -29,4 +29,8 @@ export class CardDetailsComponent {
       }
     });
   }
+
+  volverAtras() {
+    window.history.back();
+  }
 }
