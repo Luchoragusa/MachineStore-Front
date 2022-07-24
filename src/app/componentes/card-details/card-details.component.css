@@ -62,7 +62,7 @@ h1 {
 }
 
 .card-head {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .card-head {
@@ -85,9 +85,8 @@ h1 {
     color: #ff9c40;
     display: inline-block;
     font-weight: 700;
-    margin: 0;
-    padding: 10px;
     text-decoration: none;
+    text-align: right;
 }
 
 .card-action-valoration:hover {
