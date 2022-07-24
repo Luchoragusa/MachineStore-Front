@@ -46,4 +46,10 @@ input[type=submit] {
 	margin: 1px 1px;
 	cursor: pointer;
 }
+.search-box{
+	padding-left: 10px;
+}
 
+.btn-buscar{
+	border: 10px;
+}
