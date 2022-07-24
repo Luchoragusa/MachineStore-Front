@@ -2,14 +2,9 @@ export interface Game {
     id: number;
     image: string;
     name: string;
-    
-    // Estos serian para el juego posta
-    
-    // id: number;
-    // image: string;
-    // name: string;
-    // valoration: number;
-    // description: string;
+    price: number;
+    description: string;
+    valoration: number;
 }
 
 export interface GamesResponse {
