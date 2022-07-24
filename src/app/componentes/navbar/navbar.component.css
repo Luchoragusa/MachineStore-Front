@@ -30,26 +30,3 @@
 	width: 40px;
     margin: 8px 16px 8px 8px;
 }
-
-.searchbox {
-    width: 20%;
-    text-align :center;
-	padding-right: 1em;
-}
-
-input[type=submit] {
-	background-color: #4fabd6;
-	border: none;
-	color: white;
-	padding: 6px 10px;
-	text-decoration: none;
-	margin: 1px 1px;
-	cursor: pointer;
-}
-.search-box{
-	padding-left: 10px;
-}
-
-.btn-buscar{
-	border: 10px;
-}

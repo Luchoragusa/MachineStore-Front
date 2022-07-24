@@ -1,9 +1,14 @@
 <!-- Aca uso las app-card, entonces este seria como el padre que agrupa todas las tarjetas -->
 <router-outlet></router-outlet>
+<div class="searchbox">
+    <form class="d-flex" role="search">
+        <input class="form-control me-2 search-box" type="search" placeholder="Ingrese el juego" aria-label="Search">
+        <input class= "btn-buscar" type="submit" value="Buscar"/>
+    </form>  
+</div>  
 
 <article class="cards">
     <ng-container *ngFor="let game of games" class="card"> <!-- Es como un foreach para cada game de games -->
         <app-card [game]="game"></app-card> <!-- Aca le paso el juego q esta en el for ahora mismo -->
     </ng-container>
 </article>
-<br /><br /><br /><br />
