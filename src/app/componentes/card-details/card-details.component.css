@@ -1,4 +1,4 @@
-.card {
+.carddd {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,10 +16,84 @@
     background-color: #1b1b1b;
     color: rgb(255, 255, 255);
     border-radius: 5%;
-    margin-bottom: 25px;
 }
 
 .previous:hover {
     background-color: rgb(212, 212, 212);
     color: rgb(0, 0, 0);
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: -1px 2px 4px rgba(0,0,0,.25), 1px 1px 3px rgba(0,0,0,.1);
+    margin: 0 auto;
+    margin-top: 100px;
+    max-width: 340px;
+    margin-bottom: 100px;
+    padding: 10px 10px 10px 10px;
+    border: 2px solid #E3E3E3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-media {
+    width: 100%;
+}
+
+.card-details {
+    padding: 5px 15px;
+}
+
+.card-head {
+    font-weight: 400;
+}
+
+.card-head {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.card-action-price {
+    border-radius: 10px;
+    color: #4073ff;
+    display: inline-block;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px;
+    text-decoration: aliceblue;
+}
+
+.card-action-valoration {
+    border-radius: 10px;
+    color: #ff9c40;
+    display: inline-block;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.card-action-valoration:hover {
+    background-color: rgba(248, 245, 68, 0.2);
+}
+
+.card-action-price:hover {
+    background-color: rgba(98, 189, 250, 0.2);
 }
