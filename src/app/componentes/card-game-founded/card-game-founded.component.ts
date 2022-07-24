@@ -13,10 +13,7 @@ export class CardGameFoundedComponent implements OnInit {
 
   }
 
-  onClick(): void {
-    //console.log('click', this.game);
-    //this.router.navigate(['/cards', this.game.id]);
-  }
+  
   
   games: Game[] = [
     { id: 1, name: 'Fifa 22', price: 100, description: "Powered by Football™. EA SPORTS™ FIFA 22 acerca aún más el juego a la realidad gracias a mejoras significativas en la jugabilidad y una nueva temporada de novedades en todos los modos.", valoration: 90, image: 'https://cdn.discordapp.com/attachments/852889034723426324/998782981596520529/fifa-22-ficha-2411743.webp' },
@@ -30,7 +27,7 @@ export class CardGameFoundedComponent implements OnInit {
 ];
 
   games_search: Game[] = [];
-  
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       if (params['searchTerm']) {
@@ -39,5 +36,9 @@ export class CardGameFoundedComponent implements OnInit {
         this.games = this.games;
       }
     });
+  }
+
+  onClick(): void {
+    this.router.navigate(['/cards', this.games_search[0].id]);
   }
 }
