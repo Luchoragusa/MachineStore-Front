@@ -23,6 +23,10 @@ const routes: Routes = [
     {
         path: 'cards/:cardId',
         component: CardDetailsComponent,
+    },
+    {
+        path: 'home/:searchTerm',
+        component: CardContainerComponent,
     }
 ];
 

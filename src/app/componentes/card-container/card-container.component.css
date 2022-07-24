@@ -14,33 +14,6 @@
     margin: 200px;
 } */
 
-
-.searchbox {
-    margin-top: 100px;
-    margin-bottom: 20px;
-    width: 20%;
-    text-align :center;
-	padding-right: 1em;
-}
-
-input[type=submit] {
-	background-color: #4fabd6;
-	border: none;
-	color: white;
-	padding: 6px 10px;
-	text-decoration: none;
-	margin: 1px 1px;
-	cursor: pointer;
-}
-.search-box{
-	padding-left: 10px;
-    width: 250px;
-}
-
-.btn-buscar{
-	border: 10px;
-}
-
 .cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
