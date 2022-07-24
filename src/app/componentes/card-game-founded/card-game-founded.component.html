@@ -1,17 +1,20 @@
-<div class="container">   
-    <div class="card-group mt-3">
-        <div class="card text-center border-info">
-            <ng-container *ngFor="let game of games_search" class="card"> <!-- Es como un foreach para cada game de games -->
-                <div class="card-group">
-                    <div class="card">
-                        <img [src]="game.image" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{game.name}}</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-        </div>
+<div class="conteiner">
+    <h2>Resultados encontrados</h2>
+    <div class="card-group">
+        <ng-container *ngFor="let game of games_search"> <!-- Es como un foreach para cada game de games -->
+            <article class="card">
+                <img [src]="game.image" class="card-img-top" alt="...">
+                <section class="card-body">
+                    <h5 class="card-title"> {{game.name}}</h5>
+                    <p class="card-text">{{game.description}}</p>
+                    <button (click)="onClick()" class="btn btn-primary me-3">
+                        Más detalles
+                    </button>
+                </section>
+            </article>
+        </ng-container>
     </div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Game } from 'src/app/interfaces/game';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,8 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CardGameFoundedComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) { 
 
+  }
+
+  onClick(): void {
+    //console.log('click', this.game);
+    //this.router.navigate(['/cards', this.game.id]);
+  }
+  
   games: Game[] = [
     { id: 1, name: 'Fifa 22', price: 100, description: "Powered by Football™. EA SPORTS™ FIFA 22 acerca aún más el juego a la realidad gracias a mejoras significativas en la jugabilidad y una nueva temporada de novedades en todos los modos.", valoration: 90, image: 'https://cdn.discordapp.com/attachments/852889034723426324/998782981596520529/fifa-22-ficha-2411743.webp' },
     { id: 2, name: 'NBA 2k22', price: 100, description: "NBA 2K22 puts the entire basketball universe in your hands. PLAY NOW in real NBA and WNBA environments against authentic teams and players. Build your own dream team in MyTEAM with today’s stars and yesterday’s legends.", valoration: 90, image: 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2021/07/nba-2k22-2406663.jpg?itok=kCo2vXja' },
@@ -33,5 +40,4 @@ export class CardGameFoundedComponent implements OnInit {
       }
     });
   }
-  
 }

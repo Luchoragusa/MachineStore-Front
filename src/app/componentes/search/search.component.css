@@ -18,13 +18,13 @@ div input {
 }
 
 div button {
-	color: grey;
+	color: rgb(255, 255, 255);
 	height: 3rem;
 	width: 5rem;
 	font-size: 1rem;
 	border-radius: 0 10rem 10rem 0;
 	border: none;
-	background-color: linear-gradient(to right, #42A5F5, #0D47A1);
+	background: linear-gradient(to left, #42A5F5, #0D47A1);
 	opacity: .8;
 	outline: none;
 }
