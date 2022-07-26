@@ -20,6 +20,7 @@ import { GamesComponent } from './componentes/games/games.component';
 import { GamesService } from './services/games.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CardGameFoundedComponent } from './componentes/card-game-founded/card-game-founded.component';
+import { ProfileComponent } from './componentes/profile/profile.component';
 
 @NgModule({
   declarations: [ // van los componentes
@@ -34,7 +35,8 @@ import { CardGameFoundedComponent } from './componentes/card-game-founded/card-g
     GamesComponent,
     CardDetailsComponent,
     SearchComponent,
-    CardGameFoundedComponent
+    CardGameFoundedComponent,
+    ProfileComponent
   ],
   imports: [  // van los modulos
     BrowserModule,

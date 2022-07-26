@@ -5,6 +5,7 @@ import { RouterModule, Routes, Route } from '@angular/router';
 import { CardContainerComponent } from './componentes/card-container/card-container.component';
 import { CardDetailsComponent } from './componentes/card-details/card-details.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { ProfileComponent } from './componentes/profile/profile.component';
 
 const routes: Routes = [
     {
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
         path: 'home/:searchTerm',
         component: CardContainerComponent,
+    },
+    {
+        path: 'perfil',
+        component: ProfileComponent,
     }
 ];
 

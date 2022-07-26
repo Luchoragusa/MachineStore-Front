@@ -11,6 +11,10 @@ export class NavbarComponent {
     {
       label: 'Login',
       path: '/login',
+    },
+    {
+      label: 'Perfil',
+      path: '/perfil',
     }
   ];
 
