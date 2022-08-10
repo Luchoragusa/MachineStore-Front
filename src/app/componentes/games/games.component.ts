@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { GamesService } from 'src/app/services/games.service';
 
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css']
 })
-export class GamesComponent implements OnInit {
+export class GamesComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private _games: GamesService) {
+    this._games.getGames().subscribe({
+      next: (response: any) => {
+        console.log(response);
+      }
+    });
   }
-
 }

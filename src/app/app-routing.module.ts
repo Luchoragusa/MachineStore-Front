@@ -6,6 +6,7 @@ import { CardContainerComponent } from './componentes/card-container/card-contai
 import { CardDetailsComponent } from './componentes/card-details/card-details.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
+import { GamesComponent } from './componentes/games/games.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path: 'perfil',
         component: ProfileComponent,
+    },
+    {
+        path: 'games',
+        component: GamesComponent
     }
 ];
 
