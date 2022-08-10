@@ -26,7 +26,7 @@ export class GamesService {
           games: []
         };
 
-        return gamesResponse.games;
+        return gamesResponse;
       })
     );
   }
