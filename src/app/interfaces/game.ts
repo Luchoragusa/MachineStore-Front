@@ -1,13 +1,13 @@
-export interface Game {
+export interface Game { // interface para definir el objeto game que se va a usar en el componente games 
     id: number;
     image: string;
     name: string;
-    price: number;
-    description: string;
-    valoration: number;
+    species: string;
+    status: string;
+    originGame: string;
 }
 
-export interface GamesResponse {
+export interface GamesResponse {    // esta es la forma de recibir la respuesta de la API 
     count: number;
     pages: number;
     next: string | null;

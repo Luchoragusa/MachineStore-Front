@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GamesResponse } from 'src/app/interfaces/game';
 import { GamesService } from 'src/app/services/games.service';
 
 @Component({
@@ -10,9 +11,9 @@ export class GamesComponent {
 
   constructor(private _games: GamesService) {
     this._games.getGames().subscribe({
-      next: (response: any) => {
-        console.log(response);
-      }
+      next: (gamesResponse: GamesResponse) => {
+        console.log(gamesResponse);
+      },
     });
   }
 }
