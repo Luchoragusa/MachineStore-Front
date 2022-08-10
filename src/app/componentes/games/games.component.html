@@ -1,1 +1,8 @@
-<p>games works!</p>
+<ng-container *ngIf="gamesResponse">
+    <article class="cards">
+        <ng-container *ngFor="let game of gamesResponse.games" class="card"> 
+            <app-game [game]="game"></app-game> 
+        </ng-container>
+    </article>
+</ng-container>
+
