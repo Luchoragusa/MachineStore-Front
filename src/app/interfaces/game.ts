@@ -5,6 +5,10 @@ export interface Game { // interface para definir el objeto game que se va a usa
     species: string;
     status: string;
     originGame: string;
+    ///////////////////
+    description: string;
+    price: number;
+    valoration: number;
 }
 
 export interface GamesResponse {    // esta es la forma de recibir la respuesta de la API 

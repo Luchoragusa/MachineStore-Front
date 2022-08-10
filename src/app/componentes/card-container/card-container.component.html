@@ -3,8 +3,8 @@
 <app-search></app-search>
 <app-card-game-founded></app-card-game-founded>
 
-<article class="cards">
-    <ng-container *ngFor="let game of games" class="card"> <!-- Es como un foreach para cada game de games -->
-        <app-card [game]="game"></app-card> <!-- Aca le paso el juego q esta en el for ahora mismo -->
-    </ng-container>
+<article class="cards"><!-- Aca le paso el juego q esta en el for ahora mismo, Es como un foreach para cada game de games -->
+    <!--  <ng-container *ngFor="let game of games" class="card"> 
+        <app-card [game]="game"></app-card> 
+    </ng-container>-->
 </article>
