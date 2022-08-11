@@ -9,17 +9,9 @@ import { Theme, NavItem } from '../../interfaces/navbar';
 export class NavbarComponent {
   navItems: NavItem[] = [
     {
-      label: 'Juegos',
-      path: '/games',
-    },
-    {
       label: 'Perfil',
       path: '/perfil',
-    },
-    {
-      label: 'Login',
-      path: '/login',
-    },
+    }
   ];
 
   theme: Theme = 'light';

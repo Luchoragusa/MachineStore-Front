@@ -22,6 +22,7 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { GamesService } from './services/games.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GameComponent } from './componentes/game/game.component';
+import { GameFoundedComponent } from './componentes/game-founded/game-founded.component';
 
 @NgModule({
   declarations: [ // van los componentes
@@ -38,7 +39,8 @@ import { GameComponent } from './componentes/game/game.component';
     SearchComponent,
     CardGameFoundedComponent,
     ProfileComponent,
-    GameComponent
+    GameComponent,
+    GameFoundedComponent
   ],
   imports: [  // van los modulos
     BrowserModule,

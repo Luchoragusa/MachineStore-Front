@@ -20,7 +20,7 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: CardContainerComponent,
+        component: GamesComponent,
     },
     {
         path: 'cards/:cardId',
@@ -28,15 +28,11 @@ const routes: Routes = [
     },
     {
         path: 'home/:searchTerm',
-        component: CardContainerComponent,
+        component: GamesComponent,
     },
     {
         path: 'perfil',
         component: ProfileComponent,
-    },
-    {
-        path: 'games',
-        component: GamesComponent
     }
 ];
 
