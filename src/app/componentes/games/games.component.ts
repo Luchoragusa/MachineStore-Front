@@ -14,7 +14,6 @@ export class GamesComponent {
   constructor(private _games: GamesService) {
     this._games.getGames().subscribe({
       next: (gamesResponse: GamesResponse) => {
-        console.log(gamesResponse);
         this.gamesResponse = gamesResponse;
       },
     });
