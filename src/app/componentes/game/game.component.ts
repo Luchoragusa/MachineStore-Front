@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Game } from 'src/app/interfaces/game';
+import { Game, GamesResponse } from 'src/app/interfaces/game';
 
 @Component({
   selector: 'app-game',
@@ -10,15 +10,14 @@ import { Game } from 'src/app/interfaces/game';
 export class GameComponent implements OnInit {
 
   @Input() game!: Game;
+  @Input() gamesResponse!: GamesResponse;
 
   constructor(private _router: Router) { }
 
   ngOnInit(): void {}
 
   onClick(): void {
-    console.log('click', this.game);
-    localStorage.setItem('game', JSON.stringify(this.game));
+    localStorage.setItem('games', JSON.stringify(this.gamesResponse.games));
     this._router.navigate(['/cards', this.game.id]);
   }
-
 }
