@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Game, GamesResponse } from 'src/app/interfaces/game';
 import { GamesService } from 'src/app/services/games.service';
@@ -13,13 +13,18 @@ export class CardDetailsComponent {
 
   gamesResponse!: GamesResponse;
   id = '';
-  game!: Game;
+  game!: Game;  
+
+  g: any;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _games: GamesService)
   {
-    // this.gamesResponse = GamesComponent.metodo();
+    if (localStorage.getItem('game')) {
+      this.g = JSON.parse(localStorage.getItem('game') || '');
+      console.log(this.g);
+    }
 
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {

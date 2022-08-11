@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
 
   onClick(): void {
     console.log('click', this.game);
+    localStorage.setItem('game', JSON.stringify(this.game));
     this._router.navigate(['/cards', this.game.id]);
   }
 

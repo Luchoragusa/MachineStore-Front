@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GamesResponse } from 'src/app/interfaces/game';
 import { GamesService } from 'src/app/services/games.service';
 
@@ -11,15 +11,11 @@ export class GamesComponent {
   
   gamesResponse!: GamesResponse;
 
-  metodo() {
+  constructor(private _games: GamesService) {
     this._games.getGames().subscribe({
       next: (gamesResponse: GamesResponse) => {
-        return this.gamesResponse = gamesResponse;
+        this.gamesResponse = gamesResponse;
       },
     });
-  }
-
-  constructor(private _games: GamesService) {
-    this.metodo();
   }
 }
