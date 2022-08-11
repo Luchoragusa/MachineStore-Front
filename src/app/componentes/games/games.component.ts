@@ -11,11 +11,15 @@ export class GamesComponent {
   
   gamesResponse!: GamesResponse;
 
-  constructor(private _games: GamesService) {
+  metodo() {
     this._games.getGames().subscribe({
       next: (gamesResponse: GamesResponse) => {
-        this.gamesResponse = gamesResponse;
+        return this.gamesResponse = gamesResponse;
       },
     });
+  }
+
+  constructor(private _games: GamesService) {
+    this.metodo();
   }
 }

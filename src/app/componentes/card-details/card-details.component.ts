@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Game, GamesResponse } from 'src/app/interfaces/game';
 import { GamesService } from 'src/app/services/games.service';
+import { GamesComponent } from '../games/games.component';
 
 @Component({
   selector: 'app-card-details',
@@ -18,14 +19,7 @@ export class CardDetailsComponent {
     private _activatedRoute: ActivatedRoute,
     private _games: GamesService)
   {
-    console.log("Hola");
-    this._games.getGames().subscribe({
-      next: (gamesResponse: GamesResponse) => {
-        this.gamesResponse = gamesResponse;
-        console.log("Hola1");
-        console.log(this.gamesResponse.games);
-      },
-    });
+    // this.gamesResponse = GamesComponent.metodo();
 
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {
