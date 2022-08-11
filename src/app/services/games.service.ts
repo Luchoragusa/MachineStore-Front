@@ -15,7 +15,7 @@ export class GamesService {
   getGames() {// 'character' es porque es la API de Rick y Morty
     return this._http.get<GamesResponse>(`${environment.apiUrl}/api/character`).pipe(
       tap((response: any) => {
-        console.log(response);
+        console.log("Console log del services.ts" + response);
       }),
       map((response: any) => {
         const games: Game[] = [];
