@@ -13,19 +13,20 @@ export class CardDetailsComponent {
   gamesResponse!: GamesResponse;
   id = '';
   game!: Game;  
+  g: any;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _games: GamesService)
   {
     if (localStorage.getItem('games')) {
-      this.gamesResponse.games = JSON.parse(localStorage.getItem('games') || '');
+      this.g = JSON.parse(localStorage.getItem('games') || '');
     }
 
 
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {
-        const filtered = this.gamesResponse.games.filter(game => game.id.toString() === params['cardId']);
+        const filtered = this.g.filter((game: { id: { toString: () => any; }; }) => game.id.toString() === params['cardId']);
         this.game = filtered[0];
       }
     });
