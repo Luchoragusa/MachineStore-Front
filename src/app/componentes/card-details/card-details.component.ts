@@ -14,21 +14,20 @@ export class CardDetailsComponent {
   gamesResponse!: GamesResponse;
   id = '';
   game!: Game;  
-
-  g: any;
-
+  games!: GamesResponse;
+  
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _games: GamesService)
   {
-    if (localStorage.getItem('game')) {
-      this.g = JSON.parse(localStorage.getItem('game') || '');
-      console.log(this.g);
+    if (localStorage.getItem('games')) {
+      this.games = JSON.parse(localStorage.getItem('games') || '');
     }
+
 
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {
-        const filtered = this.gamesResponse.games.filter(game => game.id.toString() === params['cardId']);
+        const filtered = this.games.filter(game => game.id.toString() === params['cardId']);
         this.game = filtered[0];
       }
     });
