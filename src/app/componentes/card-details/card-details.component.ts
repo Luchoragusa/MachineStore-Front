@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Game } from 'src/app/interfaces/game';
+import { Game, GamesResponse } from 'src/app/interfaces/game';
 import { GamesService } from 'src/app/services/games.service';
 
 @Component({
@@ -10,20 +10,30 @@ import { GamesService } from 'src/app/services/games.service';
 })
 export class CardDetailsComponent {
 
+  gamesResponse!: GamesResponse;
   id = '';
-
   game!: Game;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _games: GamesService)
   {
+    console.log("Hola");
+    this._games.getGames().subscribe({
+      next: (gamesResponse: GamesResponse) => {
+        this.gamesResponse = gamesResponse;
+        console.log("Hola1");
+        console.log(this.gamesResponse.games);
+      },
+    });
+
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {
-        const filtered = this.games.filter(game => game.id.toString() === params['cardId']);
+        const filtered = this.gamesResponse.games.filter(game => game.id.toString() === params['cardId']);
         this.game = filtered[0];
       }
     });
+    console.log("Hola2");
   }
 
   volverAtras() {
