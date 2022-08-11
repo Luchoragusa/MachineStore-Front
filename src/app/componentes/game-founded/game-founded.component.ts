@@ -12,15 +12,11 @@ export class GameFoundedComponent implements OnInit {
 
   @Input() gamesResponse!: GamesResponse;
 
-  constructor(private route: ActivatedRoute) {
-  }
+  constructor(private route: ActivatedRoute) {}
 
   games_search: Game[] = [];
 
-   ngOnInit(): void {
-
-    console.log(this.gamesResponse.games);
-
+  ngOnInit(): void {
     this.route.params.subscribe(params => {
       if (params['searchTerm']) {
         this.games_search = this.gamesResponse.games.filter(game => game.name.toLowerCase().includes(params['searchTerm'].toLowerCase()));
@@ -28,5 +24,5 @@ export class GameFoundedComponent implements OnInit {
         this.gamesResponse.games = this.gamesResponse.games;
       }
     });
-   }
+  }
 }

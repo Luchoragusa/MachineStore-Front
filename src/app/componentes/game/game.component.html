@@ -4,7 +4,7 @@
         <h5 class="card-title">{{ game.name }}</h5>
         <p class="card-text">{{ game.species }} {{ game.status }}</p>
         <p class="card-text">{{ game.originName }}</p>
-        <button class="btn btn-primary me-3">Más detalles</button>
+        <button class="btn btn-primary me-3" (click)="onClick()">Más detalles</button>
         <button class="btn btn-danger">Eliminar</button>
     </section>
 </article>

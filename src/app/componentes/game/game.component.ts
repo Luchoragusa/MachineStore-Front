@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Game } from 'src/app/interfaces/game';
 
 @Component({
@@ -10,8 +11,13 @@ export class GameComponent implements OnInit {
 
   @Input() game!: Game;
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {}
+
+  onClick(): void {
+    console.log('click', this.game);
+    this._router.navigate(['/cards', this.game.id]);
+  }
 
 }
