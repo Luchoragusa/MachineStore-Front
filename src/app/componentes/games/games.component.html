@@ -1,8 +1,8 @@
 <router-outlet></router-outlet>
 <app-search></app-search>
-<app-game-founded></app-game-founded>
 
 <ng-container *ngIf="gamesResponse">
+    <app-game-founded [gamesResponse]="gamesResponse"></app-game-founded>
     <article class="cards">
         <ng-container *ngFor="let game of gamesResponse.games" class="card"> 
             <app-game [game]="game"></app-game> 
