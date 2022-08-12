@@ -5,7 +5,7 @@
     <app-game-founded [gamesResponse]="gamesResponse"></app-game-founded>
     <article class="cards">
         <ng-container *ngFor="let game of gamesResponse.games" class="card"> 
-            <app-game [game]="game" [gamesResponse]="gamesResponse"></app-game> 
+            <app-game (removeChild)="removeChild($event)" [game]="game" [gamesResponse]="gamesResponse"></app-game> 
         </ng-container>
     </article>
 </ng-container>

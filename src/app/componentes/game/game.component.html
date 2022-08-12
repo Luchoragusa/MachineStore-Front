@@ -5,6 +5,6 @@
         <p class="card-text">{{ game.species }} {{ game.status }}</p>
         <p class="card-text">{{ game.originName }}</p>
         <button class="btn btn-primary me-3" (click)="onClick()">Más detalles</button>
-        <button class="btn btn-danger">Eliminar</button>
+        <button class="btn btn-danger" (click)="removeClick()">Eliminar</button>
     </section>
 </article>

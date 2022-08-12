@@ -18,4 +18,9 @@ export class GamesComponent {
       },
     });
   }
+
+  removeChild(game: any): void{
+    const filtered = this.gamesResponse.games.filter(g => g.id !== game.id);
+    this.gamesResponse.games = filtered;
+  }
 }

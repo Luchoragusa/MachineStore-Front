@@ -10,27 +10,22 @@ import { GamesService } from 'src/app/services/games.service';
 })
 export class CardDetailsComponent {
 
-  gamesResponse!: GamesResponse;
   id = '';
   game!: Game;  
   g: any;
 
   constructor(
-    private _activatedRoute: ActivatedRoute,
-    private _games: GamesService)
+    private _activatedRoute: ActivatedRoute)
   {
     if (localStorage.getItem('games')) {
       this.g = JSON.parse(localStorage.getItem('games') || '');
     }
-
-
     this._activatedRoute.params.subscribe((params: Params) => {
       if (params['cardId']) {
         const filtered = this.g.filter((game: { id: { toString: () => any; }; }) => game.id.toString() === params['cardId']);
         this.game = filtered[0];
       }
     });
-    console.log("Hola2");
   }
 
   volverAtras() {
