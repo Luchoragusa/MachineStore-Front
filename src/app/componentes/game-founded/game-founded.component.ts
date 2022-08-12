@@ -25,4 +25,8 @@ export class GameFoundedComponent implements OnInit {
       }
     });
   }
+
+  onClick(id : any): void {
+    this.route.navigate(['/cards', id]);
+  }
 }

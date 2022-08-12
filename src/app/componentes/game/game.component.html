@@ -2,8 +2,6 @@
     <img [src]="game.image" class="card-img-top" alt="image example" />
     <section class="card-body">
         <h5 class="card-title">{{ game.name }}</h5>
-        <p class="card-text">{{ game.species }} {{ game.status }}</p>
-        <p class="card-text">{{ game.originName }}</p>
         <button class="btn btn-primary me-3" (click)="onClick()">Más detalles</button>
         <button class="btn btn-danger" (click)="removeClick()">Eliminar</button>
     </section>
