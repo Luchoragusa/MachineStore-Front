@@ -12,7 +12,7 @@ export class GameFoundedComponent implements OnInit {
 
   @Input() gamesResponse!: GamesResponse;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   games_search: Game[] = [];
 
@@ -27,6 +27,6 @@ export class GameFoundedComponent implements OnInit {
   }
 
   onClick(id : any): void {
-    this.route.navigate(['/cards', id]);
+    this.router.navigate(['/cards', id]);
   }
 }
