@@ -62,11 +62,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-machine-store:build",
+            "host": "0.0.0.0",
+            "port": 4200
+          },
           "configurations": {
             "production": {
-              "browserTarget": "machineStore:build:production",
-              "host": "0.0.0.0",
-              "port": 4200
+              "browserTarget": "machineStore:build:production"
             },
             "development": {
               "browserTarget": "machineStore:build:development"
