@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Theme, NavItem } from '../../interfaces/navbar';
 
 @Component({
@@ -16,5 +17,5 @@ export class NavbarComponent {
 
   theme: Theme = 'light';
 
-  constructor() {}
+  constructor() { }
 }

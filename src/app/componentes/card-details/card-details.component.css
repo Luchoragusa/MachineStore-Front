@@ -11,6 +11,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }	
 
+
 .previous {
     padding: 8px 16px;
     background-color: #1b1b1b;
@@ -70,7 +71,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-.card-action-price {
+.card-action-estado {
     border-radius: 10px;
     color: #4073ff;
     display: inline-block;
@@ -80,7 +81,7 @@ h1 {
     text-decoration: aliceblue;
 }
 
-.card-action-valoration {
+.card-action-origen {
     border-radius: 10px;
     color: #ff9c40;
     display: inline-block;
@@ -89,10 +90,16 @@ h1 {
     text-align: right;
 }
 
-.card-action-valoration:hover {
+.card-action-origen:hover {
     background-color: rgba(248, 245, 68, 0.2);
 }
 
-.card-action-price:hover {
+.card-action-estado:hover {
     background-color: rgba(98, 189, 250, 0.2);
+}
+
+.p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
 }

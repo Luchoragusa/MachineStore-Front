@@ -2,7 +2,7 @@
     margin: 25px 40px 50px 40px;
     border: solid 1px blue;
     border-radius: 50px;
-    background: linear-gradient(to bottom, #42A5F5, #0D47A1);
+    background: linear-gradient(to bottom, #68aee7, #1f6de2);
 }
 
 .card-group{
@@ -12,8 +12,13 @@
 }
 
 h2{
-    margin-top: 10px;
-    text-align: center;
+    display: table; 
+    margin: 0px auto 0px auto; 
+    padding:5px;
+    font-size:35px;
+    background-color:rgb(115, 211, 240);
+    color:#ffffff;
+    border-radius: 10px;
 }
 
 .card{
