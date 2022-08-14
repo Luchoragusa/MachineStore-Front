@@ -1,8 +1,11 @@
 .conteiner{
     margin: 25px 40px 50px 40px;
-    border: solid 1px blue;
+    border: solid 1px rgb(252, 252, 252);
     border-radius: 50px;
-    background: linear-gradient(to bottom, #68aee7, #1f6de2);
+    padding: 15px;
+    background:
+    linear-gradient(110deg, #78d0f3 50%, #94dbfc 50%, #c2f3e7 52%, #d1f5de 52%, #c8ebfc 0) 0 0/100% calc(100% - 10px) no-repeat,
+    linear-gradient(110deg, #5297f1 52%, transparent 0) 0 100%/100% 100% no-repeat;
 }
 
 .card-group{
@@ -16,7 +19,7 @@ h2{
     margin: 0px auto 0px auto; 
     padding:5px;
     font-size:35px;
-    background-color:rgb(115, 211, 240);
+    background-color:rgb(14, 191, 245);
     color:#ffffff;
     border-radius: 10px;
 }
