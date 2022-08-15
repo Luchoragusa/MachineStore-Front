@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 // Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { CardComponent } from './componentes/card/card.component';
 import { CardContainerComponent } from './componentes/card-container/card-container.component';
@@ -28,7 +27,6 @@ import { GameFoundedComponent } from './componentes/game-founded/game-founded.co
   declarations: [ // van los componentes
     AppComponent,
     LoginComponent,
-    HomeComponent,
     NavbarComponent,
     CardComponent,
     CardContainerComponent,
