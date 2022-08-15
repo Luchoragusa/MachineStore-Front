@@ -1,5 +1,4 @@
-<div>
-    <input class="form-control me-2 search-box" type="search" placeholder="Ingrese el juego" 
-    [(ngModel)]="searchTerm" (change)="search()">
-    <button (click)="search()">Buscar</button>
-</div>  
+<form action="" class="search-bar">
+	<input type="search" name="search" pattern=".*\S.*" required [(ngModel)]="searchTerm" (change)="search()">
+	<button class="search-btn" type="submit" (click)="search()"> </button>
+</form>
