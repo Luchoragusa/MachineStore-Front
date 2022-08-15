@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -36,6 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [  // van los modulos
     CarouselModule.forRoot(),
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
