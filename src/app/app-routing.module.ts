@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Route } from '@angular/router';
 
 // Components
-import { CardContainerComponent } from './componentes/card-container/card-container.component';
 import { CardDetailsComponent } from './componentes/card-details/card-details.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
