@@ -36,6 +36,11 @@
 	margin-right: 12px;
 }
 
-.dropdown-menu{
-	background: linear-gradient(to right, #42A5F5, #0D47A1);
+.btn-group{
+	margin-right: 15px;
+}
+
+.boton{
+	padding: 5px;
+	background-color: #0D47A1;
 }
