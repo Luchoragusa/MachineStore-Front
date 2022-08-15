@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { CardComponent } from './componentes/card/card.component';
 import { CardContainerComponent } from './componentes/card-container/card-container.component';
 import { CardDetailsComponent } from './componentes/card-details/card-details.component';
 import { FooterComponent } from './componentes/footer/footer.component';
@@ -28,7 +27,6 @@ import { GameFoundedComponent } from './componentes/game-founded/game-founded.co
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    CardComponent,
     CardContainerComponent,
     FooterComponent,
     // GameComponent,
