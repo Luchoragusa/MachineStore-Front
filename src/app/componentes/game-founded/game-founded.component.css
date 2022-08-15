@@ -6,7 +6,7 @@ body{
 
 .cont{
     width: 75%;
-    height: 500px;
+    height: auto;
     margin-top: 45px;
     border-radius: 50px;
     padding: 15px;
@@ -30,7 +30,8 @@ h2{
 }
 
 img{
-    width: 125%;
-    height: 125%;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
