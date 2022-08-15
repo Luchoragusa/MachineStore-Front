@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     GameFoundedComponent
   ],
   imports: [  // van los modulos
+    CarouselModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,

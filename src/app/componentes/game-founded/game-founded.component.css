@@ -1,5 +1,13 @@
-.conteiner{
-    margin: 45px 40px 50px 40px;
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont{
+    width: 75%;
+    height: 500px;
+    margin-top: 45px;
     border-radius: 50px;
     padding: 15px;
     background:
@@ -7,29 +15,22 @@
     linear-gradient(110deg, #5297f1 52%, transparent 0) 0 100%/100% 100% no-repeat;
 }
 
-.card-group{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 h2{
     display: table; 
-    margin: 0px auto 0px auto; 
+    margin: 0px auto 20px auto; 
     padding:5px;
     font-size:35px;
-    background-color:rgb(14, 191, 245);
-    color:#ffffff;
+    color:#000000;
     border-radius: 10px;
 }
 
-.card{
-    max-width: 300px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border: 2px solid #E3E3E3;
+.carousel-class{
+    display: flex;
+    justify-content: center;
 }
-.progress{
-    margin: 25px 0px 50px 0px;
+
+img{
+    width: 125%;
+    height: 125%;
+    border-radius: 10px;
 }

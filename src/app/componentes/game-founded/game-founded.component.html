@@ -1,20 +1,18 @@
-<div class="conteiner" *ngIf="games_search?.length">
-    <h2>RESULTADOS ENCONTRADOS</h2>
-    <div class="card-group">
-        <ng-container *ngFor="let game of games_search"> <!-- Es como un foreach para cada game de games -->
-            <article class="card">
-                <img [src]="game.image" class="card-img-top" alt="...">
-                <section class="card-body">
-                    <h5 class="card-title"> {{game.name}}</h5>
-                    <button (click)="onClick(game.id)" class="btn btn-primary me-3">
-                        Más detalles
-                    </button>
-                </section>
-            </article>
-        </ng-container>
+<body>
+    <div class="cont" *ngIf="games_search?.length">
+        <h2>RESULTADOS ENCONTRADOS</h2>
+        <carousel class="carousel-class">
+            <ng-container *ngFor="let game of games_search">
+                <slide>
+                    <img [src]="game.image">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4 class="card-title"> {{game.name}}</h4>
+                        <button (click)="onClick(game.id)" class="btn btn-primary me-3">
+                            Más detalles
+                        </button>
+                    </div>
+                </slide>
+            </ng-container>
+        </carousel>
     </div>
-</div>
-
-<div class="progress" *ngIf="games_search?.length">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-</div>
+</body>
