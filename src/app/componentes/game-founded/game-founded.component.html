@@ -4,9 +4,12 @@
         <carousel class="carousel-class">
             <ng-container *ngFor="let game of games_search">
                 <slide>
+                    <h4 class="card-title"> 
+                        <strong>{{game.name}}</strong>
+                    </h4>
                     <img [src]="game.image">
                     <div class="carousel-caption d-none d-md-block">
-                        <h4 class="card-title"> {{game.name}}</h4>
+                        
                         <button (click)="onClick(game.id)" class="btn btn-primary me-3">
                             Más detalles
                         </button>
