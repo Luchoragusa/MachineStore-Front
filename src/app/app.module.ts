@@ -8,17 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { CardDetailsComponent } from './componentes/card-details/card-details.component';
-import { FooterComponent } from './componentes/footer/footer.component';
 import { SearchComponent } from './componentes/search/search.component';
+import { GameComponent } from './componentes/game/game.component';
 import { GamesComponent } from './componentes/games/games.component';
+import { GameFoundedComponent } from './componentes/game-founded/game-founded.component';
+import { CardDetailsComponent } from './componentes/card-details/card-details.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 // Servicios
 import { GamesService } from './services/games.service';
 import { HttpClientModule } from '@angular/common/http';
-import { GameComponent } from './componentes/game/game.component';
-import { GameFoundedComponent } from './componentes/game-founded/game-founded.component';
 
 @NgModule({
   declarations: [ // van los componentes
@@ -39,8 +39,7 @@ import { GameFoundedComponent } from './componentes/game-founded/game-founded.co
     FormsModule,
     HttpClientModule
   ],
-  providers: [// esta es la forma de inyectar un servicio
-    // GamesService,
+  providers: [
     { 
       provide: GamesService,
       useClass: GamesService,
