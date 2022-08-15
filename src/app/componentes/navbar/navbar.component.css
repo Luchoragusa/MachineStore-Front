@@ -35,3 +35,7 @@
 .navbar-toggler{
 	margin-right: 12px;
 }
+
+.dropdown-menu{
+	background: linear-gradient(to right, #42A5F5, #0D47A1);
+}
