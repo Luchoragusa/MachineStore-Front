@@ -17,6 +17,12 @@
 	font-size: 20px;
 	font-weight: bold;
 	transition: 0.3s;
+	margin-right: 100px;
+}
+
+.nav-link{
+	margin-right: 100px;
+	margin: 8px 16px 8px 8px;
 }
 
 .nav-link.active {
@@ -43,4 +49,8 @@
 .boton{
 	padding: 5px;
 	background-color: #0D47A1;
+}
+
+.dropdown-menu{
+	background-color: #dfe7f5;
 }
