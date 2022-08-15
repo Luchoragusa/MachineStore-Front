@@ -8,8 +8,22 @@
 }
 
 .navbar{
-	height: 75px;
     background: linear-gradient(to right, #42A5F5, #0D47A1);
+}
+
+.nav-item{
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.nav-link.active {
+    color: white;
+}
+.nav-link:hover {
+	color: white;
 }
 
 .logo{

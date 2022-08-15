@@ -1,8 +1,11 @@
 .conteiner{
-    margin: 75px 40px 50px 40px;
+    margin: 25px 40px 50px 40px;
     border: solid 1px blue;
     border-radius: 50px;
-    background: linear-gradient(to bottom, #42A5F5, #0D47A1);
+    padding: 15px;
+    background:
+    linear-gradient(110deg, #78d0f3 50%, #94dbfc 50%, #c2f3e7 52%, #d1f5de 52%, #c8ebfc 0) 0 0/100% calc(100% - 10px) no-repeat,
+    linear-gradient(110deg, #5297f1 52%, transparent 0) 0 100%/100% 100% no-repeat;
 }
 
 .card-group{
@@ -12,14 +15,21 @@
 }
 
 h2{
-    margin-top: 10px;
-    text-align: center;
+    display: table; 
+    margin: 0px auto 0px auto; 
+    padding:5px;
+    font-size:35px;
+    background-color:rgb(14, 191, 245);
+    color:#ffffff;
+    border-radius: 10px;
 }
 
 .card{
     max-width: 300px;
     margin-top: 5px;
     margin-bottom: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid #E3E3E3;
 }
 .progress{
     margin: 25px 0px 50px 0px;
