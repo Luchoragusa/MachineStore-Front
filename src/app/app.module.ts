@@ -12,7 +12,6 @@ import { CardDetailsComponent } from './componentes/card-details/card-details.co
 import { FooterComponent } from './componentes/footer/footer.component';
 import { SearchComponent } from './componentes/search/search.component';
 import { GamesComponent } from './componentes/games/games.component';
-import { CardGameFoundedComponent } from './componentes/card-game-founded/card-game-founded.component';
 import { ProfileComponent } from './componentes/profile/profile.component';
 
 // Servicios
@@ -27,11 +26,9 @@ import { GameFoundedComponent } from './componentes/game-founded/game-founded.co
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    // GameComponent,
     GamesComponent,
     CardDetailsComponent,
     SearchComponent,
-    CardGameFoundedComponent,
     ProfileComponent,
     GameComponent,
     GameFoundedComponent
