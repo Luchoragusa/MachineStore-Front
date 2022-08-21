@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,9 +19,21 @@ import { CardDetailsComponent } from './componentes/card-details/card-details.co
 import { ProfileComponent } from './componentes/profile/profile.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 
+
+// Imports Video 
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+
 // Servicios
 import { GamesService } from './services/games.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from './componentes/dialog/dialog.component';
 
 @NgModule({
   declarations: [ // van los componentes
@@ -34,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     ProfileComponent,
     GameComponent,
-    GameFoundedComponent
+    GameFoundedComponent,
+    DialogComponent
   ],
   imports: [  // van los modulos
     CarouselModule.forRoot(),
@@ -43,7 +56,20 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+// imports video
+
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     { 

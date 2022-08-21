@@ -1,17 +1,15 @@
-<main>  
-    
-    <header *ngIf="getUser()">  <!-- al no haber user, no habilita el navbar al principio -->
-        <app-navbar></app-navbar>
-    </header>
-    
-    <section class="body">
-        <router-outlet>  <!-- Aqui se usa el router-outlet para que se muestre el componente que corresponda -->
-            <!-- Aca angular mete en componente que yo le digo, por ejemplo si el path es /games, entonces se carga el componente games.component.html dependieno de la url -->
-        </router-outlet>
-    </section> 
 
-    <footer>
-        <app-footer></app-footer>
-    </footer>
 
-</main>
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>home</mat-icon>
+    </button>
+    <span>Machine Store</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="openDialog()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+</mat-toolbar>
