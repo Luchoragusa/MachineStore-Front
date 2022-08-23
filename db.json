@@ -1,0 +1,23 @@
+{
+  "gameList": [
+    {
+      "nombre": "Fifa 23",
+      "descripcion": "Fifita",
+      "categoria": "3",
+      "valoracion": "★",
+      "imagen": "https://cdn.discordapp.com/attachments/852889034723426324/1009522170369679462/Fifa23.jpg",
+      "precio": 1000,
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

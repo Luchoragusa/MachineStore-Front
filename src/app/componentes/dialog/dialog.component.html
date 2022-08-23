@@ -5,38 +5,43 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Nombre del juego</mat-label>
-            <input matInput placeholder="">
+            <input matInput placeholder="" formControlName="nombre"> <!-- En el formControlName pongo como lo defini en el .ts -->
         </mat-form-field>
     
         <mat-form-field appearance="outline">
             <mat-label>Precio del juego</mat-label>
-            <input matInput placeholder="" type="number">
+            <input matInput placeholder="" type="number" formControlName="precio">
         </mat-form-field>
         
         <mat-form-field appearance="outline">
             <mat-label>Descripcion del juego</mat-label>
-            <input matInput placeholder="">
+            <input matInput placeholder="" formControlName="descripcion">
         </mat-form-field>
     
+        <mat-form-field appearance="outline">
+            <mat-label>Imagen del juego</mat-label>
+            <input matInput placeholder="" formControlName="imagen">
+        </mat-form-field>
+
         <label id="example-radio-group-label">Seleccione la valoracion</label>
         <mat-radio-group
           aria-labelledby="example-radio-group-label"
-          class="example-radio-group">
-          <mat-radio-button class="example-radio-button" *ngFor="let v of valoracion" [value]="valoracion">
+          class="example-radio-group"
+          formControlName="valoracion">
+          <mat-radio-button class="example-radio-button" *ngFor="let v of valoracion" [value]="v">
             {{v}}
           </mat-radio-button>
         </mat-radio-group>
-    
+
         <mat-form-field appearance="outline">
             <mat-label>Categoria del juego</mat-label>
-            <mat-select>
-                <mat-option value="1">Accion</mat-option>
-                <mat-option value="2">Aventura</mat-option>
-                <mat-option value="3">Deportes</mat-option>
-                <mat-option value="4">Estrategia</mat-option>
-                <mat-option value="5">Otros</mat-option>
+            <mat-select [(ngModel)]="categories" name="categories">
+              <mat-option *ngFor="let cat of categories" [value]="cat.id">
+                {{cat.name}}
+              </mat-option>
             </mat-select>
-        </mat-form-field>
+          </mat-form-field>
+
 
     </form>
 
@@ -44,5 +49,5 @@
 
 <div mat-dialog-actions [align]="'end'">
     <button mat-button mat-dialog-close color="warn">Cancelar</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial color="primary">Agregar</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial color="primary" (click)="addGame()">Agregar</button>
 </div>
