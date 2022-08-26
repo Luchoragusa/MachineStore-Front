@@ -10,6 +10,23 @@ Es un servicio gratuito y para utilizarlo solo es necesario crear una cuenta y d
 La característica principal de nuestra plataforma es la que nos distingue del resto de otras similares: informamos al gamer cuánto cuesta un videojuego cotizado en dólares, a pesos argentinos teniendo en cuenta los impuestos de la moneda extranjera decretados por el gobierno.
 Ejemplo: si un videojuego sale $10 usd, se cotiza al dólar solidario (1 usd = $191 ars), sale $1940 pesos argentinos. 
 
+## Semanas de Trabajo (detalle)
+**Julio**
+Días del 13 al 20
+	1. Creacion del TP. 
+	2. Se añade el login, navbar, cartas y se plantea el formato de la página.
+Días del 21 al 29 
+	1. Se añade CSS al proyecto. 
+	2. Se arreglan errores que fueron surgiendo a medida que se codificaba.
+
+**Agosto**
+Días del 10 al 15 
+	a. Se agrega la API "Rick & Morty" la cual ha sido utilizada de ejemplo, ya que no logramos encontrar una API de videojuegos acorde a lo que solicitamos (las API que encontramos son muy complejas). 
+	b. Se corrigen errores sobre las cartas. 
+	c. Se termina de detallar el "game-found" la cual selecciona la/s carta/s que tenga/n el mismo nombre que se escribió. 
+	d. Se crea la vps. Se añade más CSS, se agregan detalles sacados de "ng bootstrap".
+Día 25
+	a. Se agrega ng lint
 
 | Requerimiento funcional | 2 integrantes |
 | ------------- | ------------- |
