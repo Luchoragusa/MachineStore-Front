@@ -27,7 +27,7 @@ Días del 10 al 15
   - Se agrega la API "Rick & Morty" la cual ha sido utilizada de ejemplo, ya que no logramos encontrar una API de videojuegos acorde a lo que solicitamos (las API que encontramos son muy complejas). 
   - Se corrigen errores sobre las cartas. 
   - Se termina de detallar el "game-found" la cual selecciona la/s carta/s que tenga/n el mismo nombre que se escribió. 
-  - Se sube el proyecto a una VPS (el link es http://ljragusa.us:4200) 
+  - Se sube el proyecto a una VPS
   - Se añade más CSS, se agregan detalles sacados de "ng bootstrap".
 
 Día 25
