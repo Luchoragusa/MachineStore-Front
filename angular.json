@@ -65,7 +65,7 @@
           "options": {
             "browserTarget": "angular-machine-store:build",
             "host": "0.0.0.0",
-            "port": 4200,
+            "port": 2022,
             "disableHostCheck": true
           },
           "configurations": {
