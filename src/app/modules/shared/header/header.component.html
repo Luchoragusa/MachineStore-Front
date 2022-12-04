@@ -1,0 +1,25 @@
+<div class="navbar fixed-top">
+    <a href="/home" > <!-- Como hacer para que nos lleve al path del home-->
+        <img class="logo" src="https://cdn.discordapp.com/attachments/852889034723426324/998718998516617466/icono-MS-black.png">
+    </a>
+
+    <app-search></app-search>
+
+    <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle boton"aria-controls="dropdown-basic">Opciones <span class="caret"></span>
+        </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                <li *ngFor="let item of navItems" class="nav-item">
+                    <a 
+                        class="nav-link" 
+                        aria-current="page"  
+                        [href]="item.path"
+                        routerLinkActive="active"
+                    > 
+                        {{ item.label }}
+                    </a>
+                </li>
+            </ul>
+    </div>
+    
+</div>
