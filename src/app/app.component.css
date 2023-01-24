@@ -1,0 +1,10 @@
+header{
+  top: 0;
+  margin-bottom: 50px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

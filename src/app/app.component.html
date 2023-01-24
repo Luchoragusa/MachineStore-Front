@@ -1,0 +1,18 @@
+<main>  
+    
+  <header>
+    <ng-container *ngIf="getToken()">
+        <app-header></app-header>
+    </ng-container>
+  </header>
+  
+  <section class="body">
+      <router-outlet></router-outlet>
+  </section> 
+
+  <footer>
+      <app-footer></app-footer>
+  </footer>
+
+</main>
+

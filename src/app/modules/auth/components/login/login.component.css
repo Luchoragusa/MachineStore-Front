@@ -1,0 +1,37 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 88vh;
+  }
+  
+  .login-content {
+    background-color:  #c6c7c8;
+    width: 300px;
+    padding: 5%;
+    border-radius: 5%;
+    border: 1px solid black;
+  }
+  
+  .login-input {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  
+  .login-submit {
+    margin-bottom: 3%;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .login-content {
+      width: 375px;
+      padding: 4%;
+    }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .login-content {
+      padding: 2%;
+    }
+  }
+  

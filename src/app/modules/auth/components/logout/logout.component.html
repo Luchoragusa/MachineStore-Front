@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Log out</h2>
+<mat-dialog-content class="mat-typography">
+    <p>Are you sure you want to log out?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="logout()">Yes</button>
+</mat-dialog-actions>
