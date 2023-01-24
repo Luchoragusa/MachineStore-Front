@@ -14,6 +14,8 @@ export class AlertDialogComponent implements OnInit {
   message : string = this.data.message;
 
   ngOnInit(): void {
+    alert(this.data.title);
+    console.log("Hola! soy el dialog");
   }
 
 }

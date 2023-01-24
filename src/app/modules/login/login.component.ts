@@ -13,6 +13,7 @@ import { AlertDialogComponent } from '../shared/alert-dialog/alert-dialog.compon
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent{
+
   show = false;
   form = new FormGroup({
     email: new FormControl('', {
@@ -32,36 +33,32 @@ export class LoginComponent{
              private aS: AuthService,
              public dialog: MatDialog) { }
 
-  onClicksignUp(event: any){
-    console.log('Pulsaste el boton para registrarte', event)
+  onClicksignUp_show(){
     this.show = true;
   }
     
-  onClicksignIn(event: any) {
-    localStorage.setItem('user', JSON.stringify({ id: 1, name: 'John' }));    // habilita el navbar con un usuario hardcodeado
-
-    console.log('Pulsaste el boton para ingresar', event)
-    this._router.navigate(['/home']);
+  onClicksignIn_show() {
     this.show = false;
   }
 
-  onSubmit() {
+  onClicksignIn() {
     if (this.form.valid) {
       
       const user = {
         email: this.form.value.email,
         password: this.form.value.password,
       };
-
       this.aS.login(user).subscribe({
         next:(response: any) => {
           localStorage.setItem('token', response.token);
           const decodedToken = this.getDecodedAccessToken(response.token);
           localStorage.setItem('email', decodedToken.email);
           localStorage.setItem('role', decodedToken.role);
+          localStorage.setItem('id', decodedToken.userId);
           this._router.navigate(['/home']);
         },
         error:(err) => {
+          alert("Error: " + err.error.message);
           this.dialog.open(AlertDialogComponent, {
             data: {
               title: 'Failed to login',
@@ -71,6 +68,10 @@ export class LoginComponent{
         }
       });
     }
+  }
+
+  onClicksignUp(){
+    this.show = true;
   }
 
   getDecodedAccessToken(token: string): any {

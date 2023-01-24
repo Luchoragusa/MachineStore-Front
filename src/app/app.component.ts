@@ -8,15 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'machineStore';
 
-  getUser() {
-    const user: any = (localStorage.getItem('user') || ''); 
-
-    if (user) {
-      return JSON.parse(user);
+  getToken() {  
+    if( localStorage.getItem('token') != null ) { 
+      return true;
     }
-
-    console.log(user); 
-    return user;
-  }
+    else {
+      return false;
+    }}
 
 }
