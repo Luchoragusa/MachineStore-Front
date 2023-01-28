@@ -1,83 +1,97 @@
-<mat-sidenav-container>
-  
+<mat-sidenav-container class="fondo">
+
     <!-- Barra lateral -->
     <mat-sidenav class="games-filter" [(opened)]="isShowing" mode="side">
-      
+
       <mat-nav-list>
-        <div class="with-icon mat-h1">
+        <div class="with-icon-filtro mat-h2" (click)="toggleSidenav()">
           <mat-icon>
             <span class="material-symbols-rounded">
               filter_alt
             </span>
           </mat-icon>
-          Filtrar
+          Esconder
         </div>
       </mat-nav-list>
-      
+
       <mat-divider></mat-divider>
-      
+
       <mat-nav-list>
         <div class="with-icon mat-h2">
           <mat-icon>
             <span class="material-symbols-rounded">
-              bookmark 
+              bookmark
             </span>
           </mat-icon>
           Categorías
         </div>
-  
+
         <mat-radio-group aria-labelledby="radio-group-label" [(ngModel)]="filters">
-  
+
           <ng-container *ngIf="categories">
-            <mat-radio-button class="radio-button" *ngFor="let category of categories" [value]="category.id" (change)="categoryFilter(category.id)">
-              <div>
+            <mat-radio-button class="radio-button"
+              *ngFor="let category of categories"
+              [value]="category.id"
+              (change)="categoryFilter(category.id)"
+            >
+              <div class="text-white">
                 {{category.name}}
               </div>
             </mat-radio-button>
           </ng-container>
-          
+
           <mat-divider></mat-divider>
-        
+
+          <mat-radio-button class="radio-button" [value]="0" (change)="categoryFilter(0)">
+            <div class="text-white">No aplicar filtros</div>
+          </mat-radio-button>
+
+          <mat-divider></mat-divider>
+
           <div class="with-icon mat-h2">
             <mat-icon>
               <span class="material-symbols-rounded">
-                code_blocks 
+                code_blocks
               </span>
             </mat-icon>
             Desarrolladores
           </div>
-  
+
           <ng-container *ngIf="developers">
-            <mat-radio-button class="radio-button" *ngFor="let developer of developers" [value]="developer.id" (change)="developerFilter(developer.id)">
-              <div>
+            <mat-radio-button class="radio-button"
+              *ngFor="let developer of developers"
+              [value]="developer.id"
+              (change)="developerFilter(developer.id)"
+            >
+              <div class="text-white">
                 {{developer.name}}
               </div>
             </mat-radio-button>
           </ng-container>
-  
+
           <mat-divider></mat-divider>
-              
+
           <mat-radio-button class="radio-button" [value]="0" (change)="developerFilter(0)">
-            <div>No aplicar filtros</div>
+            <div class="text-white">No aplicar filtros</div>
           </mat-radio-button>
-        
+
         </mat-radio-group>
-      
+
       </mat-nav-list>
-    
+
     </mat-sidenav>
-  
+
     <!-- Contenido -->
     <mat-sidenav-content class="content">
-      
-      <div class="games-content"> 
-        
+
+      <div class="games-content">
+
         <div class="titulo">
           Tienda
         </div>
-  
+
         <div class="busqueda">
-          
+
           <button mat-raised-button (click)="toggleSidenav()">
             <mat-icon>
               <span class="material-symbols-rounded">
@@ -86,8 +100,8 @@
            </mat-icon>Filtros
           </button>
           &nbsp;
-          
-          <mat-form-field appearance="standard" class="filtro">      
+
+          <mat-form-field class="filtro">
             <mat-label>
               <mat-icon>
                 <span class="material-symbols-rounded">
@@ -98,30 +112,32 @@
             </mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese el nombre de un juego" #input>
           </mat-form-field>
-        
+
         </div>
-        
+
         <ng-container *ngIf="this.dataSource; else noGamesFilter">
-          
+
           <ng-container *ngIf="this.dataSource.filteredData.length > 0; else noGamesFilter">
             <div class="cards">
-              <section class="card" *ngFor="let game of this.dataSource.filteredData">
+              <section class="card"
+                *ngFor="let game of this.dataSource.filteredData"
+              >
                 <app-game [game]="game" ></app-game>
               </section>
             </div>
-          </ng-container>  
-          
-          
+          </ng-container>
+
+
         </ng-container>
-        
+
         <ng-template #noGamesFilter>
           <div class="notFoundGames mat-display-1">
             <p>NO SE ENCONTRARON JUEGOS.</p>
           </div>
         </ng-template>
-  
-      </div>    
-  
+
+      </div>
+
     </mat-sidenav-content>
   </mat-sidenav-container>
-  
+

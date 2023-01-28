@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      
+
       const user = {
         email: this.form.value.email,
         password: this.form.value.password,
@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
         error:(err) => {
           this.dialog.open(AlertDialogComponent, {
             data: {
-              title: 'Failed to login',
-              message: 'Email or password incorrect'
+              title: 'Error al loguearse',
+              message: 'Email y/o contraseña incorrectos'
             }
           })
         }
