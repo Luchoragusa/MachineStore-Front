@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from '../../auth/services/auth.service';
 import { Game } from '../../games/interface/game';
-import { GamesService } from '../../games/services/games.service';
+import { ServicioService } from '../../services/servicio.service';
 import { AlertDialogComponent } from '../../shared/alert-dialog/alert-dialog.component';
 import { DeleteGameComponent } from './delete-game/delete-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
@@ -17,7 +17,10 @@ import { EditGameComponent } from './edit-game/edit-game.component';
 })
 export class GamesListComponent implements OnInit {
 
-  constructor(private gS:GamesService, private dialog: MatDialog, private _authService:AuthService) {}
+  constructor(
+    private dialog: MatDialog,
+    private _serService: ServicioService
+  ) { }
 
   displayedColumns: string[] = ['id', 'name', 'category', 'developer', 'isAvailable', 'actions'];
   dataSource !: MatTableDataSource<Game>;
@@ -31,7 +34,8 @@ export class GamesListComponent implements OnInit {
   response: any;
 
   getGames() {
-    this.gS.getGames().subscribe({
+    // this.gS.getGames().subscribe({
+    this._serService.getGamesByType('game').subscribe({
       next: (response: Game[]) => {
 
         console.log(response);
@@ -61,7 +65,7 @@ export class GamesListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     },
-    error: (err) => {
+    error: (err: any) => {
       this.dialog.open(AlertDialogComponent, {
         data: {
           title: 'Error',

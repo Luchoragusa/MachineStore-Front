@@ -3,9 +3,7 @@ import { NgModel } from '@angular/forms';
 
 import { MatTableDataSource } from '@angular/material/table';
 
-import { GamesService } from 'src/app/modules/games/services/games.service';
-import { CategoriesService } from 'src/app/modules/categories/services/categories.service';
-import { DevelopersService } from 'src/app/modules/developers/services/developers.service';
+import { ServicioService } from 'src/app/modules/services/servicio.service';
 
 import { Game } from 'src/app/modules/games/interface/game';
 import { Category } from 'src/app/modules/categories/interface/category';
@@ -27,16 +25,14 @@ export class StoreComponent implements OnInit {
   isShowing!: boolean;
 
   constructor(
-    private _gamesService: GamesService,
-    private _categoriesService: CategoriesService,
-    private _developersService: DevelopersService
+    private _serService: ServicioService
   ) {}
 
   ngOnInit(): void {
     // Carga juegos al inicio
     this.cargarJuegos();
     // Carga las categorías
-    this._categoriesService.getCategories().subscribe({
+    this._serService.getAllTypesOfStuff('category').subscribe({
       next: (response: any) => {
         this.categories = response.elemts;
         console.log(this.categories);
@@ -47,7 +43,7 @@ export class StoreComponent implements OnInit {
     });
 
     // Carga los desarrolladores
-    this._developersService.getDevelopers().subscribe({
+    this._serService.getAllTypesOfStuff('developer').subscribe({
       next: (response: any) => {
         this.developers = response.elemts;
         console.log(this.developers);
@@ -60,7 +56,9 @@ export class StoreComponent implements OnInit {
 
   cargarJuegos() {
     // Busca los juegos para cargarlos en la tienda
-    this._gamesService.getGames().subscribe({
+
+    // this._gamesService.getGames().subscribe({
+    this._serService.getGamesByType('game').subscribe({
       next: (response: any) => {
         this.games = response;
       },
@@ -89,7 +87,8 @@ export class StoreComponent implements OnInit {
     if (categoryId === 0) {
       this.cargarJuegos();
     } else {
-      this._categoriesService.getGames(categoryId).subscribe({
+      // this._categoriesService.getGames(categoryId).subscribe({
+      this._serService.getGamesByType('category', categoryId).subscribe({
         next: (response: any) => {
           this.games = response.games;
         },
@@ -111,7 +110,8 @@ export class StoreComponent implements OnInit {
     if (developerId === 0) {
       this.cargarJuegos();
     } else {
-      this._developersService.getGames(developerId).subscribe({
+      // this._developersService.getGames(developerId).subscribe({
+      this._serService.getGamesByType('developer', developerId).subscribe({
         next: (response: any) => {
           this.games = response.games;
         },

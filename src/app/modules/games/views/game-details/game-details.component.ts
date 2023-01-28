@@ -3,9 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Game } from '../../interface/game';
-import { GamesService } from '../../services/games.service';
 import { UserGamesService } from '../../services/user-games.service';
 import { AlertDialogComponent } from 'src/app/modules/shared/alert-dialog/alert-dialog.component';
+import { ServicioService } from 'src/app/modules/services/servicio.service';
 
 @Component({
   selector: 'app-game-details',
@@ -18,19 +18,19 @@ export class GameDetailsComponent implements OnInit {
   trailer: any;
 
   constructor(
-    private _gamesService: GamesService,
     private _userGamesService: UserGamesService,
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _sanitizer: DomSanitizer,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _serService: ServicioService
   ) {}
 
   ngOnInit(): void {
     // Obtengo el id del juego por medio de la ruta
     const gameId = Number(this._activatedRoute.snapshot.paramMap.get('gameId'));
     // Busco el juego
-    this._gamesService.getGame(gameId).subscribe({
+    this._serService.getGame(gameId).subscribe({
       next: (response: any) => {
         this.game = {
           id: response.id,
