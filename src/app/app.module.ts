@@ -23,7 +23,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import { GamesRoutingModule } from './modules/games/games-routing.module';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // import components
 
@@ -94,7 +95,8 @@ import { CreateGameComponent } from './modules/admin/games-list/create-game/crea
     MatRadioModule,
     MatCardModule,
     GamesRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
   bootstrap: [AppComponent]

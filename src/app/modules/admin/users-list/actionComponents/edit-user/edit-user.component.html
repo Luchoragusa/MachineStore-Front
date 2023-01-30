@@ -1,1 +1,32 @@
-<p>edit-user works!</p>
+<h1 mat-dialog-title>Editar Usuario</h1>
+
+<form [formGroup]="form" (ngSubmit)="guardarUsuario()">
+  <div mat-dialog-content>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input placeholder="nombre" matInput formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input placeholder="email" matInput formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Rol</mat-label>
+      <input placeholder="rol" matInput formControlName="role">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha Creacion</mat-label>
+      <input placeholder="fechaCreacion" matInput formControlName="fechaCreacion">
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>CERRAR</button>
+    <button mat-raised-button color="primary" cdkFocusInitial>GUARDAR</button>
+  </div>
+
+</form>

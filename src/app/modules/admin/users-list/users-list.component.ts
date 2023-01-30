@@ -93,4 +93,5 @@ export class UsersListComponent implements OnInit {
       this.getUsers();
     });
   }
+
 }
