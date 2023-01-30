@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(private _http: HttpClient, private _router: Router) { }
-  
+
   register(user: any) {
     return this._http.post(`${environment.url}/users/register`, user);
   }
@@ -45,7 +45,7 @@ export class AuthService {
     const payload: any = this.getDecodedToken();
     const actualTime = Date.now() / 1000;
     const remainingTime = (payload.expiredAt) - actualTime;
-    console.log(remainingTime);
+    // console.log(remainingTime);
     return remainingTime;
   }
 
@@ -53,7 +53,7 @@ export class AuthService {
     getDecodedToken() {
       return jwtDecode(this.getToken());
     }
-    
+
     // Obtiene el token
     getToken() {
       return localStorage.getItem('token') || '';

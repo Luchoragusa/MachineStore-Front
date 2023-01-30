@@ -10,7 +10,11 @@ export class NotfoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    localStorage.clear();
+    // setTimeout and return to /login
+    setTimeout(() => {
+      localStorage.clear();
+      window.location.href = '';
+    }, 2000);
   }
 
 }

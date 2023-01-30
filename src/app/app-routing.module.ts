@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // Import the components that will be used in the routes
@@ -8,6 +7,7 @@ import { AuthGuard } from './modules/auth/auth.guard';
 import { NotfoundComponent } from './modules/shared/notfound/notfound.component';
 import { GameDetailsComponent, StoreComponent } from './modules/games/views';
 import { AdminComponent } from './modules/admin/admin.component';
+import { RegisterComponent } from './modules/auth/components/register/register.component';
 
 
 const routes: Routes = [
@@ -19,6 +19,10 @@ const routes: Routes = [
   {
       path: 'login',
       component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
       path: 'store',
@@ -35,8 +39,8 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [AuthGuard]
   },
-  {  path: '**', 
-    pathMatch: 'full', 
+  {  path: '**',
+    pathMatch: 'full',
     component: NotfoundComponent },
 ];
 
