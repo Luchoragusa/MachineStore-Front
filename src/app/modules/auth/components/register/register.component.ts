@@ -12,6 +12,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
+  selectedFile: any = null;
+
   registerForm = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required]
@@ -25,13 +27,12 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', {
       validators: [Validators.required, Validators.minLength(5)]
     }),
-
-    idRole: new FormControl('', {
-      validators: [Validators.pattern('^[0-9]*$')]
+    passwordConfirm: new FormControl('', {
+      validators: [Validators.required, Validators.minLength(5)]
     }),
-    confirmed: new FormControl('', {
-      validators: [Validators.pattern('^[0-9]*$')]
-    }),
+    image: new FormControl('', {
+      validators: [Validators.required]
+    })
   });
   hide = true;
 
@@ -44,33 +45,37 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFileSelected(event: any) {
+    this.registerForm.controls['image'].setValue(event.target.files[0]);
+  }
+
   onSubmit() {
     if (this.registerForm.valid) {
+      const formData = new FormData();
+      formData.append('name', this.registerForm.value.name || '');
+      formData.append('surname', this.registerForm.value.surname || '');
+      formData.append('email', this.registerForm.value.email || '');
+      formData.append('password', this.registerForm.value.password || '');
+      formData.append('passwordConfirm', this.registerForm.value.passwordConfirm || '');
+      formData.append('image', this.registerForm.value.image || '');
 
-      const user = {
-        name: this.registerForm.value.name,
-        surname: this.registerForm.value.surname,
-        email: this.registerForm.value.email,
-        password: this.registerForm.value.password,
-        idRole: this.registerForm.value.idRole,
-        confirmed: this.registerForm.value.confirmed,
-      };
-
-      this.aS.register(user).subscribe({
-        next:(response: any) => {
-          localStorage.setItem('token', response.token);
+      this.aS.register(formData).subscribe({
+        next: (response: any) => {
+          console.log(response);
           this._router.navigate(['/login']);
         },
-        error:(err) => {
+        error: (error: any) => {
+          console.log(error);
           this.dialog.open(AlertDialogComponent, {
             data: {
-              title: 'Error al registrarse',
-              message: 'Algunos datos son incorrectos'
+              title: 'Error',
+              message: error.error.message
             }
-          })
+          });
         }
       });
     }
-  }
 
+    }
 }
+
