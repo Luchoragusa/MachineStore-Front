@@ -1,7 +1,13 @@
 .card {
     max-width: 240px;
   }
-  
-  .button {
-    width: 100%;
-  }
+
+.button {
+  width: 100%;
+}
+
+.toTheMiddle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
