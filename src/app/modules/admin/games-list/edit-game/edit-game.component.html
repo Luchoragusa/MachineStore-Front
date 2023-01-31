@@ -1,1 +1,32 @@
-<p>edit-game works!</p>
+<h1 mat-dialog-title>Editar Juego</h1>
+
+<form [formGroup]="form" (ngSubmit)="guardarJuego()">
+  <div mat-dialog-content>
+
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input placeholder="Nombre" matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Categoría</mat-label>
+      <input placeholder="Categoría" matInput formControlName="nameCategory">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Desarrollador</mat-label>
+      <input placeholder="Desarrollador" matInput formControlName="nameDeveloper">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Disponible</mat-label>
+      <input placeholder="Disponible" matInput formControlName="isAvailable">
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>CERRAR</button>
+    <button type="submit" mat-raised-button color="primary" cdkFocusInitial (click)="guardarJuego()">GUARDAR</button>
+  </div>
+
+</form>
