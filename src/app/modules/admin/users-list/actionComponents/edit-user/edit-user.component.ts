@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { User } from 'src/app/modules/users/interface/user';
 import { UsersService } from 'src/app/modules/users/services/users.service';
-declare let alertify: any;
+import { AlertifyService } from 'src/app/modules/services/alertify.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -14,11 +14,12 @@ export class EditUserComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: User,
-    private uS: UsersService
+    private uS: UsersService,
+    private alertify: AlertifyService
   ) { }
 
-  usuario: User = this.data;
   editdata: any;
+  nombreRol: string = '';
 
   ngOnInit(): void {
     this.loadEditData(this.data.id);
@@ -26,28 +27,32 @@ export class EditUserComponent implements OnInit {
 
   form = new FormGroup({
     name: new FormControl(''),
+    surname: new FormControl(''),
     email: new FormControl('', Validators.email),
-    // idRole: new FormControl(''),
-    createdAt: new FormControl(''),
   })
 
-  loadEditData(id:any) {
+  // usuario = this.form.value;
+
+  // Trae los datos al pop-up
+  loadEditData(id: any) {
     this.uS.getUser(id).subscribe((response: any) => {
       this.editdata = response;
       this.form.setValue({
         name: this.editdata.name,
+        surname: this.editdata.surname,
         email: this.editdata.email,
-        // idRole: this.editdata.idRole,
-        createdAt: this.editdata.createdAt
       })
     })
   }
 
   guardarUsuario() {
-    if(this.form.valid) {
-      this.uS.updateUser(this.data.id, this.data).subscribe((response: any) => {
-        alertify.success('Usuario actualizado correctamente');
+    if (this.form.valid) {
+      this.uS.updateUser(this.data.id, this.form.value).subscribe((response: any) => {
+        this.alertify.success('Usuario actualizado correctamente');
       });
+    }
+    else {
+      this.alertify.error('Error al actualizar el usuario');
     }
   }
 

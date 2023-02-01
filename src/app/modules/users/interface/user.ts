@@ -6,13 +6,11 @@ export interface User {
     password?: string;
     idRole: number;
     roleName: string;
-    seed?: string;
-    image?: string;
-    registro: string;
+    image?: string | File;
     createdAt: Date;
     updatedAt: Date;
   }
-  
+
   export interface UserImage {
     id: number;
     name: string;
@@ -26,4 +24,3 @@ export interface User {
     createdAt: Date;
     updatedAt: Date;
   }
-  

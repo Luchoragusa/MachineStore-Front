@@ -73,16 +73,13 @@ export class ServicioService {
 
   updateTypeOf(typeId: number, type: any, typeOf: string): Observable<Object> | any {
     if(typeOf === 'category') {
-      return this._http.put(`${this.urlC}/${typeId}`, type);
+      return this._http.patch(`${this.urlC}/${typeId}`, type);
     }
     else if (typeOf === 'developer') {
-      return this._http.put(`${this.urlD}/${typeId}`, type);
+      return this._http.patch(`${this.urlD}/${typeId}`, type);
     }
     else if (typeOf === 'game') {
-      return this._http.put(`${this.urlG}/${typeId}`, type);
-    }
-    else {
-      console.error('Error: No se ha podido actualizar el tipo de elemento');
+      return this._http.patch(`${this.urlG}/${typeId}`, type);
     }
   }
 

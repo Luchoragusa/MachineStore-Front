@@ -10,8 +10,8 @@ import { AlertDialogComponent } from '../shared/alert-dialog/alert-dialog.compon
 export class AuthGuard implements CanActivate {
 
   constructor( private _router: Router, private _authService:AuthService, private dialog: MatDialog) { }
- 
-  
+
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -29,8 +29,8 @@ export class AuthGuard implements CanActivate {
         this._authService.logout();
         this.dialog.open(AlertDialogComponent, {
           data: {
-            title: 'Your session expired',
-            message: 'To regain access to the website you must log in again'
+            title: 'Tu sesión ha expirado',
+            message: 'Por favor, inicia sesión de nuevo'
           }
         })
       }

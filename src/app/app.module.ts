@@ -48,6 +48,7 @@ import { GamesListComponent } from './modules/admin/games-list/games-list.compon
 import { EditGameComponent } from './modules/admin/games-list/edit-game/edit-game.component';
 import { DeleteGameComponent } from './modules/admin/games-list/delete-game/delete-game.component';
 import { CreateGameComponent } from './modules/admin/games-list/create-game/create-game.component';
+import { AlertifyService } from './modules/services/alertify.service';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,10 @@ import { CreateGameComponent } from './modules/admin/games-list/create-game/crea
     MatTabsModule,
     MatCheckboxModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true },
+    AlertifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

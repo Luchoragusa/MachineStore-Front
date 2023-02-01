@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Game } from 'src/app/modules/games/interface/game';
 import { ServicioService } from 'src/app/modules/services/servicio.service';
-declare let alertify: any;
+import { AlertifyService } from 'src/app/modules/services/alertify.service';
 
 @Component({
   selector: 'app-edit-game',
@@ -14,7 +14,8 @@ export class EditGameComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Game,
-    private sS: ServicioService
+    private sS: ServicioService,
+    private alertify: AlertifyService
   ) { }
 
   juego: Game = this.data;
@@ -31,6 +32,7 @@ export class EditGameComponent implements OnInit {
     isAvailable: new FormControl(''),
   })
 
+  // Muestra el pop-up
   loadEditData(id: any) {
     this.sS.getGame(id).subscribe((response: any) => {
       this.editdata = response;
@@ -46,8 +48,10 @@ export class EditGameComponent implements OnInit {
   guardarJuego() {
     if(this.form.valid) {
       this.sS.updateTypeOf(this.data.id, this.data, 'game').subscribe((response: any) => {
-        alertify.success('Juego actualizado correctamente');
+        this.alertify.success('Juego actualizado correctamente');
       });
+    } else {
+      this.alertify.error('No se han podido actualizar los datos');
     }
   }
 

@@ -24,7 +24,7 @@ export class UsersService {
     return this._http.delete(`${this.url}/${userId}`);
   }
 
-  updateUser(userId: number, user: any) {
+  updateUser(userId:number,  user: any) {
     return this._http.patch(`${this.url}/${userId}`, user);
   }
 

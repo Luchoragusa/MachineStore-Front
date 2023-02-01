@@ -59,21 +59,21 @@ export class RegisterComponent implements OnInit {
       formData.append('passwordConfirm', this.registerForm.value.passwordConfirm || '');
       formData.append('image', this.registerForm.value.image || '');
 
-      this.aS.register(formData).subscribe({
-        next: (response: any) => {
-          console.log(response);
-          this._router.navigate(['/login']);
-        },
-        error: (error: any) => {
-          console.log(error);
-          this.dialog.open(AlertDialogComponent, {
-            data: {
-              title: 'Error',
-              message: error.error.message
-            }
-          });
-        }
-      });
+      // this.aS.register(formData).subscribe({
+      //   next: (response: any) => {
+      //     console.log(response);
+      //     this._router.navigate(['/login']);
+      //   },
+      //   error: (error: any) => {
+      //     console.log(error);
+      //     this.dialog.open(AlertDialogComponent, {
+      //       data: {
+      //         title: 'Error',
+      //         message: error.error.message
+      //       }
+      //     });
+      //   }
+      // });
     }
 
     }

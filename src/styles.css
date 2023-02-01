@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     background-image: url('https://cdn.wallpapersafari.com/91/0/SRuG02.jpg');
 }
 
-
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';

@@ -17,6 +17,10 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2020",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/alertifyjs.d.ts"
+    ],
     "module": "es2020",
     "lib": [
       "es2020",

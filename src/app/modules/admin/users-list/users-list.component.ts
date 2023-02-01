@@ -46,8 +46,6 @@ export class UsersListComponent implements OnInit {
             roleName: user.Role.name,
             email: user.email,
             idRole: user.Role.id,
-            seed: user.seed,
-            registro: user.registro,
             createdAt: user.createdAt,
             updatedAt: user.updatedAt,
           });
