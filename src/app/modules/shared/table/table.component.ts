@@ -68,12 +68,12 @@ export class TableComponent implements OnInit {
   //   });
   // }
 
-  deleteUserGame(userGame: User) {
-    this.dialog.open(DeleteUserGameComponent, {
-      data: userGame
-    }).afterClosed().subscribe(() => {
-      this.ngOnInit();
-    });
-  }
+  // deleteUserGame(userGame: User) {
+  //   this.dialog.open(DeleteUserGameComponent, {
+  //     data: userGame
+  //   }).afterClosed().subscribe(() => {
+  //     this.ngOnInit();
+  //   });
+  // }
 
 }

@@ -24,6 +24,14 @@
 
 }
 
+.mat-css {
+  width: 100%;
+  background-origin: padding-box;
+  background-clip: content-box, padding-box;
+  border-radius: 10px;
+  padding: 5px;
+}
+
 .mat-column-actionButtons {
   word-wrap: break-word !important;
   white-space: unset !important;

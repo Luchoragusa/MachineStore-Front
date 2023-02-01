@@ -48,14 +48,14 @@
         </ng-container> -->
 
         <!-- Si existe botón de 'Eliminar' -->
-        <ng-container *ngIf="!tableColumn.deleteButton">
+        <!-- <ng-container *ngIf="!tableColumn.deleteButton">
           <a mat-flat-button color="warn" (click)="deleteUserGame( row )" class="boton">
             <mat-icon>
               <span class="material-symbols-outlined">delete</span>
             </mat-icon>
             Eliminar
           </a>
-        </ng-container>
+        </ng-container> -->
 
       </td>
     </ng-container>
@@ -88,4 +88,4 @@
 </table>
 
 <!-- Paginación de la tabla -->
-<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecciona una página"></mat-paginator>
+<mat-paginator class="mat-css" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecciona una página"></mat-paginator>
