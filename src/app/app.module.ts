@@ -49,6 +49,11 @@ import { EditGameComponent } from './modules/admin/games-list/edit-game/edit-gam
 import { DeleteGameComponent } from './modules/admin/games-list/delete-game/delete-game.component';
 import { CreateGameComponent } from './modules/admin/games-list/create-game/create-game.component';
 import { AlertifyService } from './modules/services/alertify.service';
+import { ProfileComponent } from './modules/users/profile/profile.component';
+import { TableComponent } from './modules/shared/table/table.component';
+import { ConfirmDialogComponent } from './modules/shared/confirm-dialog/confirm-dialog.component';
+import { EditUserGameComponent } from './modules/shared/table/actionsUserGame/edit-user-game/edit-user-game.component';
+import { DeleteUserGameComponent } from './modules/shared/table/actionsUserGame/delete-user-game/delete-user-game.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +77,12 @@ import { AlertifyService } from './modules/services/alertify.service';
     GamesListComponent,
     EditGameComponent,
     DeleteGameComponent,
-    CreateGameComponent
+    CreateGameComponent,
+    ProfileComponent,
+    TableComponent,
+    ConfirmDialogComponent,
+    EditUserGameComponent,
+    DeleteUserGameComponent
   ],
   imports: [
     BrowserModule,

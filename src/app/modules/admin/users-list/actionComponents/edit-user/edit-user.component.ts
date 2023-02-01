@@ -19,7 +19,6 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   editdata: any;
-  nombreRol: string = '';
 
   ngOnInit(): void {
     this.loadEditData(this.data.id);

@@ -18,7 +18,6 @@ export class EditGameComponent implements OnInit {
     private alertify: AlertifyService
   ) { }
 
-  juego: Game = this.data;
   editdata: any;
 
   ngOnInit(): void {
@@ -36,18 +35,18 @@ export class EditGameComponent implements OnInit {
   loadEditData(id: any) {
     this.sS.getGame(id).subscribe((response: any) => {
       this.editdata = response;
-      this.form.patchValue({
+      this.form.setValue({
         name: this.editdata.name,
         nameCategory: this.editdata.Category.name,
         nameDeveloper: this.editdata.Developer.name,
         isAvailable: this.editdata.isAvailable,
-      });
-    });
+      })
+    })
   }
 
   guardarJuego() {
-    if(this.form.valid) {
-      this.sS.updateTypeOf(this.data.id, this.data, 'game').subscribe((response: any) => {
+    if (this.form.valid) {
+      this.sS.updateTypeOf(this.data.id, this.form.value, 'game').subscribe((response: any) => {
         this.alertify.success('Juego actualizado correctamente');
       });
     } else {

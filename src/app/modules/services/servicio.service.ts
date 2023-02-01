@@ -71,8 +71,8 @@ export class ServicioService {
     }
   }
 
-  updateTypeOf(typeId: number, type: any, typeOf: string): Observable<Object> | any {
-    if(typeOf === 'category') {
+  updateTypeOf(typeId: number, type: any, typeOf: string) {
+    if (typeOf === 'category') {
       return this._http.patch(`${this.urlC}/${typeId}`, type);
     }
     else if (typeOf === 'developer') {
@@ -80,6 +80,9 @@ export class ServicioService {
     }
     else if (typeOf === 'game') {
       return this._http.patch(`${this.urlG}/${typeId}`, type);
+    }
+    else {
+      return this._http.get(`${this.urlG}`);
     }
   }
 

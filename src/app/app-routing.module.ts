@@ -8,6 +8,7 @@ import { NotfoundComponent } from './modules/shared/notfound/notfound.component'
 import { GameDetailsComponent, StoreComponent } from './modules/games/views';
 import { AdminComponent } from './modules/admin/admin.component';
 import { RegisterComponent } from './modules/auth/components/register/register.component';
+import { ProfileComponent } from './modules/users/profile/profile.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
       path: 'login',
       component: LoginComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: 'register',
@@ -41,7 +46,8 @@ const routes: Routes = [
   },
   {  path: '**',
     pathMatch: 'full',
-    component: NotfoundComponent },
+    component: NotfoundComponent
+  }
 ];
 
 @NgModule({

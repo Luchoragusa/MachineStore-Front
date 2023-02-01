@@ -55,11 +55,12 @@ export class UsersListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     },
-    error: (err) => {
+      error: (err) => {
+      // console.log(err);
       this.dialog.open(AlertDialogComponent, {
         data: {
           title: 'Error',
-          message: err.error.message
+          message: 'hola'
         }
       });
     }

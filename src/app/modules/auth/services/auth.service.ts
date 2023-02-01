@@ -49,18 +49,23 @@ export class AuthService {
     return remainingTime;
   }
 
-    // Obtener el payload del token
-    getDecodedToken() {
-      return jwtDecode(this.getToken());
-    }
+  // Obtener el payload del token
+  getDecodedToken() {
+    return jwtDecode(this.getToken());
+  }
 
-    // Obtiene el token
-    getToken() {
-      return localStorage.getItem('token') || '';
-    }
+  // Obtiene el token
+  getToken() {
+    return localStorage.getItem('token') || '';
+  }
 
-    getRole() {
-      const payload: any = this.getDecodedToken();
-      return payload.role;
-    }
+  getRole() {
+    const payload: any = this.getDecodedToken();
+    return payload.role;
+  }
+
+  getCurrentUserId(): number {
+    const payload: any = this.getDecodedToken();
+    return payload.userId;
+  }
 }

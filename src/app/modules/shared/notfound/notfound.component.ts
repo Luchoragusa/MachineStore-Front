@@ -10,10 +10,10 @@ export class NotfoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // setTimeout and return to /login
+    // setTimeout and return to /store
     setTimeout(() => {
       localStorage.clear();
-      window.location.href = '';
+      window.location.href = '/store';
     }, 2000);
   }
 

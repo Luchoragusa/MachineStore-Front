@@ -1,0 +1,41 @@
+.filtro {
+  width: 20%;
+  margin: 0% 1%;
+  padding: auto;
+}
+
+.tabla {
+  width: 100%;
+  background-origin: padding-box;
+  background-clip: content-box, padding-box;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.cover {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 5px;
+}
+
+.text {
+  font-size: 20px;
+  color: #fff;
+
+}
+
+.mat-column-actionButtons {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

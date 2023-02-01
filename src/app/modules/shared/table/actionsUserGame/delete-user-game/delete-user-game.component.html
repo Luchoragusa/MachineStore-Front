@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Eliminar Juego Biblioteca</h2>
+
+<mat-dialog-content class="mat-typography">
+    <p>¿Está seguro que quiere eliminar este juego de la biblioteca?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>CANCELAR</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial (click)="deleteUserGame()">ACEPTAR</button>
+</mat-dialog-actions>

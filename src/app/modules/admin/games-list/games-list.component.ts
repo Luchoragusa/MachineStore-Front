@@ -69,7 +69,7 @@ export class GamesListComponent implements OnInit {
       this.dialog.open(AlertDialogComponent, {
         data: {
           title: 'Error',
-          message: err.error.message
+          message: 'juego'
         }
       });
     }
