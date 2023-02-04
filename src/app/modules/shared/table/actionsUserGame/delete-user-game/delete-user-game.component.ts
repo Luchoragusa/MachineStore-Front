@@ -14,7 +14,7 @@ export class DeleteUserGameComponent implements OnInit {
   constructor(
     @Inject (MAT_DIALOG_DATA) public data: User,
     private uS: UsersService,
-    private alertify: AlertifyService
+    private alertify: AlertifyService,
   ) { }
 
   usuario: User = this.data;
@@ -22,12 +22,15 @@ export class DeleteUserGameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteUserGame() {
-    this.alertify.confirm('¿Estás seguro de que quieres eliminar este juego de tu biblioteca?', () => {
-      this.uS.deleteUser(this.data.id).subscribe((response: any) => {
-        this.alertify.success('Juego eliminado de la biblioteca');
-      });
-    }, function () {})
-  }
+  // deleteUserGame() {
+  //   this.uS.deleteUserGame().subscribe(
+  //     (response: any) => {
+  //       this.alertify.success('Juego eliminado del usuario');
+  //     },
+  //     (error: any) => {
+  //       this.alertify.error('No se pudo eliminar el juego del usuario');
+  //     }
+  //   );
+  // }
 
 }

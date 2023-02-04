@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserGameComponent } from './actionsUserGame/delete-user-game/delete-user-game.component';
 import { User } from '../../users/interface/user';
 
+import { AlertifyService } from '../../services/alertify.service';
 
 @Component({
   selector: 'app-table',
@@ -33,7 +34,7 @@ export class TableComponent implements OnInit {
   @Output() action: EventEmitter<TableButtonAction> =
     new EventEmitter<TableButtonAction>();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private alertify: AlertifyService) { }
 
   ngOnInit(): void {
     const columnNames = this.tableColumns.map(
@@ -68,12 +69,19 @@ export class TableComponent implements OnInit {
   //   });
   // }
 
-  // deleteUserGame(userGame: User) {
-  //   this.dialog.open(DeleteUserGameComponent, {
-  //     data: userGame
-  //   }).afterClosed().subscribe(() => {
-  //     this.ngOnInit();
+  // deleteUserGame(element: any) {
+  //   const dialogRef = this.dialog.open(DeleteUserGameComponent, {
+  //     width: '350px',
+  //     data: { msg: element.name },
   //   });
+  //   dialogRef.afterClosed().subscribe((res) => {
+  //     if (res) {
+  //       this.action.emit(element);
+  //     }
+  //   }),
+  //     (error: any) => {
+  //       this.alertify.error('No se pudo eliminar el juego del usuario');
+  //     }
   // }
 
 }

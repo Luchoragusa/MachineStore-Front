@@ -9,6 +9,8 @@ import { Game } from 'src/app/modules/games/interface/game';
 import { Category } from 'src/app/modules/categories/interface/category';
 import { Developer } from 'src/app/modules/developers/interface/developer';
 
+import { AlertifyService } from 'src/app/modules/services/alertify.service';
+
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -25,10 +27,13 @@ export class StoreComponent implements OnInit {
   isShowing!: boolean;
 
   constructor(
-    private _serService: ServicioService
+    private _serService: ServicioService,
+    private alertify: AlertifyService
   ) {}
 
   ngOnInit(): void {
+    this.alertify.success('¡Bienvenido a la tienda!');
+
     // Carga juegos al inicio
     this.cargarJuegos();
     // Carga las categorías

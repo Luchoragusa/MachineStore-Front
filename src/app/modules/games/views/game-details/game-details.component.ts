@@ -29,6 +29,7 @@ export class GameDetailsComponent implements OnInit {
   ngOnInit(): void {
     // Obtengo el id del juego por medio de la ruta
     const gameId = Number(this._activatedRoute.snapshot.paramMap.get('gameId'));
+
     // Busco el juego
     this._serService.getGame(gameId).subscribe({
       next: (response: any) => {
@@ -82,5 +83,6 @@ export class GameDetailsComponent implements OnInit {
       },
     });
   }
+
 }
 

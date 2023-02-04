@@ -14,6 +14,7 @@
             <p class="datos"> Valoración: {{game.valoration}}</p>
           </div>
           &nbsp;
+
             <button [disabled]="!game.isAvailable" mat-flat-button color="primary" class="boton" (click)="addToLibrary()">
               {{ game.isAvailable ? 'Añadir a la biblioteca' : 'No disponible para añadir'  }}
             </button>
