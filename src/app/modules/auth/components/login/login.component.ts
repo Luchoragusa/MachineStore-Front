@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { AlertDialogComponent } from '../../../shared/alert-dialog/alert-dialog.component';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
+import { AlertifyService } from 'src/app/modules/services/alertify.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,7 +30,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _router: Router,
     public dialog: MatDialog,
-    private aS: AuthService
+    private aS: AuthService,
+    private alertify: AlertifyService,
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
       this.aS.login(user).subscribe({
         next:(response: any) => {
           localStorage.setItem('token', response.token);
+          this.alertify.success('¡Bienvenido a la MachineStore!')
           this._router.navigate(['/store']);
         },
         error:(err) => {

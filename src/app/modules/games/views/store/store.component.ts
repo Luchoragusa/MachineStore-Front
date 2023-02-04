@@ -32,7 +32,7 @@ export class StoreComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.alertify.success('¡Bienvenido a la tienda!');
+    // this.alertify.success('¡Bienvenido a la tienda!');
 
     // Carga juegos al inicio
     this.cargarJuegos();
