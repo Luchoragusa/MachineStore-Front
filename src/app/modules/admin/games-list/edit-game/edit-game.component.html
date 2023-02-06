@@ -8,9 +8,18 @@
       <input placeholder="Nombre" matInput formControlName="name">
     </mat-form-field>
 
-    <mat-form-field>
+    <!-- <mat-form-field>
       <mat-label>Categoría</mat-label>
       <input placeholder="Categoría" matInput formControlName="nameCategory">
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categoría</mat-label>
+      <mat-select>
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>

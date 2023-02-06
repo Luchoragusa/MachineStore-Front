@@ -1,9 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Game } from 'src/app/modules/games/interface/game';
 import { ServicioService } from 'src/app/modules/services/servicio.service';
 import { AlertifyService } from 'src/app/modules/services/alertify.service';
+import { Game } from 'src/app/modules/games/interface/game';
+import { Category } from 'src/app/modules/categories/interface/category';
+import { Developer } from 'src/app/modules/developers/interface/developer';
 
 @Component({
   selector: 'app-edit-game',
@@ -13,15 +15,18 @@ import { AlertifyService } from 'src/app/modules/services/alertify.service';
 export class EditGameComponent implements OnInit {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Game,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private sS: ServicioService,
     private alertify: AlertifyService
   ) { }
 
-  editdata: any;
+  game: Game = this.data.game;
+  categories: Category = this.data.categories;
+  developers: Developer = this.data.developers;
 
   ngOnInit(): void {
-    this.loadEditData(this.data.id);
+    // this.loadEditData(this.data.id);
+    console.log(this.data.game);
   }
 
   form = new FormGroup({
@@ -32,17 +37,17 @@ export class EditGameComponent implements OnInit {
   })
 
   // Muestra el pop-up
-  loadEditData(id: any) {
-    this.sS.getGame(id).subscribe((response: any) => {
-      this.editdata = response;
-      this.form.setValue({
-        name: this.editdata.name,
-        nameCategory: this.editdata.Category.name,
-        nameDeveloper: this.editdata.Developer.name,
-        isAvailable: this.editdata.isAvailable,
-      })
-    })
-  }
+  // loadEditData(id: any) {
+  //   this.sS.getGame(id).subscribe((response: any) => {
+  //     this.editdata = response;
+  //     this.form.setValue({
+  //       name: this.editdata.name,
+  //       nameCategory: this.editdata.Category.name,
+  //       nameDeveloper: this.editdata.Developer.name,
+  //       isAvailable: this.editdata.isAvailable,
+  //     })
+  //   })
+  // }
 
   guardarJuego() {
     if (this.form.valid) {
