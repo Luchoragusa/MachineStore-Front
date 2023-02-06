@@ -81,7 +81,6 @@ export class GamesListComponent implements OnInit {
     this._serService.getAllTypesOfStuff('category').subscribe({
       next: (response: any) => {
         this.categories = response.elemts;
-        console.log(this.categories);
       },
     error: (err: any) => {
       this.dialog.open(AlertDialogComponent, {
@@ -98,7 +97,6 @@ export class GamesListComponent implements OnInit {
     this._serService.getAllTypesOfStuff('developer').subscribe({
       next: (response: any) => {
         this.developers = response.elemts;
-        console.log(this.developers);
       },
     error: (err: any) => {
       this.dialog.open(AlertDialogComponent, {
