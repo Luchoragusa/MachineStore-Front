@@ -25,6 +25,7 @@ import {MatCardModule} from '@angular/material/card';
 import { GamesRoutingModule } from './modules/games/games-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 
 // import components
 
@@ -107,7 +108,8 @@ import { DeleteUserGameComponent } from './modules/shared/table/actionsUserGame/
     MatCardModule,
     GamesRoutingModule,
     MatTabsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true },
