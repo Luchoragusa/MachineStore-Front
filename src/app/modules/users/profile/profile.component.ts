@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   response: any;
   user!: User;
   games: Game[] = [];
+  imagen!: String;
 
   gamesTableColumns: TableColumn[] = [];
 
@@ -46,6 +47,7 @@ export class ProfileComponent implements OnInit {
     this._usersService.getUser(userId).subscribe({
       next: (res: any) => {
         this.user = res;
+        this.imagen = res.image;
       },
       error: (err: any) => {
         console.error(`Código de error ${err.status}: `, err.error.msg);

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ServicioService } from 'src/app/modules/services/servicio.service';
 import { AlertifyService } from 'src/app/modules/services/alertify.service';
@@ -18,7 +18,7 @@ export class EditGameComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private sS: ServicioService,
     private alertify: AlertifyService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
   ) { }
 
   game: Game = this.data.game;
@@ -55,7 +55,7 @@ export class EditGameComponent implements OnInit {
         i++;
       }
     }
-    
+
     band = true;
     i = 1;
     while (band) {
@@ -74,6 +74,7 @@ export class EditGameComponent implements OnInit {
       trailer:      [this.game.trailer],
       valoration:   [this.game.valoration],
     });
+
   }
 
   guardarJuego() {
