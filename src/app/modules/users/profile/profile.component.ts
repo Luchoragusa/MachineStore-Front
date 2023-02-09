@@ -4,7 +4,7 @@ import { UsersService } from '../../users/services/users.service';
 import { AuthService } from '../../auth/services/auth.service';
 import { Game } from '../../games/interface/game';
 import { User } from '../../users/interface/user';
-
+import { environment } from 'src/environments/environment';
 import { TableColumn } from '../../shared/models';
 
 @Component({
@@ -13,6 +13,7 @@ import { TableColumn } from '../../shared/models';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  [x: string]: any;
   response: any;
   user!: User;
   games: Game[] = [];
@@ -47,7 +48,7 @@ export class ProfileComponent implements OnInit {
     this._usersService.getUser(userId).subscribe({
       next: (res: any) => {
         this.user = res;
-        this.imagen = res.image;
+        this.imagen = environment.url + "/" + this.user.image;
       },
       error: (err: any) => {
         console.error(`Código de error ${err.status}: `, err.error.msg);
