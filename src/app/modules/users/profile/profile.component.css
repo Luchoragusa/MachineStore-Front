@@ -1,12 +1,51 @@
 .profile {
   margin: auto;
   margin-top: 85px;
-  background: linear-gradient(rgb(200, 200, 250), rgb(146, 153, 243));
+  background: linear-gradient(rgb(159, 159, 236), rgb(146, 153, 243));
   justify-content: center;
   max-width: 1100px;
-  padding: 10px 5px 5px 5px;
+  padding: 10px 5px 60px 5px; /*arriba derecha abajo izquierda*/
   border-radius: 2%;
   border:rgb(47, 61, 255) 1px solid;
+}
+
+.card{
+  position:relative;
+  border-radius:8px;
+  box-shadow:0 0 10px rgba(255, 0, 0, 0.2);
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background-color:#E1BEE7;
+  transform:scaleY(1);
+  transition:all 0.5s;
+  transform-origin: bottom
+}
+
+.card:after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background-color:#8E24AA;
+  transform:scaleY(0);
+  transition:all 0.5s;
+  transform-origin: bottom
+}
+
+.card:hover::after{
+  transform:scaleY(1);
 }
 
 .titulo {
@@ -24,7 +63,7 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
-  padding: 10px 10px 20px 10px;
+  color: azure;
 }
 
 .games-library {

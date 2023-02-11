@@ -65,7 +65,7 @@
       </p>
 
     <!-- si isAvailable es false, entonces que aparezca un mat-form-field para poner la fecha de lanzamiento con date picker -->
-    <mat-form-field  class="create-game-input" *ngIf="registerForm.controls.isAvailable.value">
+    <mat-form-field  class="create-game-input" *ngIf="!registerForm.controls.isAvailable.value">
       <mat-label>Fecha de lanzamiento</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Fecha de lanzamiento" tabindex="1">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

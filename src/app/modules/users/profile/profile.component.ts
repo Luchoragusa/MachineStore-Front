@@ -49,6 +49,7 @@ export class ProfileComponent implements OnInit {
       next: (res: any) => {
         this.user = res;
         this.imagen = environment.url + "/" + this.user.image;
+        this.user.roleName = res.Role.name;
       },
       error: (err: any) => {
         console.error(`Código de error ${err.status}: `, err.error.msg);
