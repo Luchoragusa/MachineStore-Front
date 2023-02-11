@@ -12,8 +12,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  selectedFile: any = null;
-
   registerForm = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required]
@@ -27,7 +25,7 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', {
       validators: [Validators.required, Validators.minLength(5)]
     }),
-    passwordConfirm: new FormControl('', {
+    confirmPassword: new FormControl('', {
       validators: [Validators.required, Validators.minLength(5)]
     }),
     image: new FormControl('', {
@@ -56,26 +54,27 @@ export class RegisterComponent implements OnInit {
       formData.append('surname', this.registerForm.value.surname || '');
       formData.append('email', this.registerForm.value.email || '');
       formData.append('password', this.registerForm.value.password || '');
-      formData.append('passwordConfirm', this.registerForm.value.passwordConfirm || '');
+      formData.append('confirmPassword', this.registerForm.value.confirmPassword || '');
       formData.append('image', this.registerForm.value.image || '');
 
-      // this.aS.register(formData).subscribe({
-      //   next: (response: any) => {
-      //     console.log(response);
-      //     this._router.navigate(['/login']);
-      //   },
-      //   error: (error: any) => {
-      //     console.log(error);
-      //     this.dialog.open(AlertDialogComponent, {
-      //       data: {
-      //         title: 'Error',
-      //         message: error.error.message
-      //       }
-      //     });
-      //   }
-      // });
+      this.aS.register(formData).subscribe({
+        next: (response: any) => {
+          console.log(response);
+          this._router.navigate(['/login']);
+        },
+        error: (error: any) => {
+          console.log(error);
+          this.dialog.open(AlertDialogComponent, {
+            data: {
+              title: 'Error',
+              message: error.error.message
+            }
+          });
+        }
+      });
     }
+    console.log(this.registerForm.value);
 
-    }
+  }
 }
 

@@ -21,11 +21,13 @@
 
     <!-- Si el usuario es Admin muestra el enlace -->
     <ng-container *ngIf="this._authService.getRole() === 1">
+      <a mat-button routerLink="/admin">
+        <span>ADMIN</span>
+      </a>
 
-    <a mat-button routerLink="/admin">
-      <span>ADMIN</span>
-    </a>
-
+      <a mat-button routerLink="/create">
+        <span>CARGAR JUEGO</span>
+      </a>
     </ng-container>
 
     <span class="nav-spacer"></span>

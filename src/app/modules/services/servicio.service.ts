@@ -44,7 +44,7 @@ export class ServicioService {
     }
   }
 
-  getAllTypesOfStuff(type: string) {
+  getAllTypesOfStuff(type?: string) {
     if (type === 'category') {
       return this._http.get(`${this.urlC}`);
     }

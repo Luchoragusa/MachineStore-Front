@@ -34,13 +34,13 @@
 
     <mat-form-field appearance="outline" class="register-input">
       <mat-label>Confirme su contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" formControlName="passwordConfirm" placeholder="Password" tabindex="2">
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword" placeholder="Password" tabindex="2">
       <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide" tabindex="-1">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
-      <mat-error *ngIf="registerForm.controls.passwordConfirm.hasError('required')">La constraseña es requerida...</mat-error>
-      <mat-error *ngIf="registerForm.controls.passwordConfirm.hasError('minlength')">La contraseña debe contener 6 o más caracteres</mat-error>
-      <mat-error *ngIf="registerForm.controls.passwordConfirm.hasError('passwordMismatch')">Las contraseñas no coinciden</mat-error>
+      <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('required')">La constraseña es requerida...</mat-error>
+      <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('minlength')">La contraseña debe contener 6 o más caracteres</mat-error>
+      <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('passwordMismatch')">Las contraseñas no coinciden</mat-error>
     </mat-form-field>
 
     <!-- mat-form-field para imagen  https://stackoverflow.com/questions/52622061/how-to-use-input-type-file-in-angular-material-->

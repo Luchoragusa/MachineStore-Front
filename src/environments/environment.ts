@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'http://186.13.28.61:3000' // <-- Change if local as localhost
+  url: 'http://186.13.28.61:3000'
+  // url: 'http://localhost:3000' // <-- Change if local as localhost
 };
 
 /*

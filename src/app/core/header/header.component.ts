@@ -10,7 +10,10 @@ import { LogoutComponent } from 'src/app/modules/auth/components/logout/logout.c
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog: MatDialog, public _authService:AuthService) { }
+  constructor(
+    private dialog: MatDialog,
+    public _authService: AuthService
+  ) { }
   ngOnInit(): void {
   }
 
