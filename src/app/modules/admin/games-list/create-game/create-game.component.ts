@@ -23,6 +23,9 @@ export class CreateGameComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
+  categories: Category[] = this.sS.getAllTypesOfStuff('category');
+  developers: Developer[] = this.sS.getAllTypesOfStuff('developer');
+
   registerForm = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required]

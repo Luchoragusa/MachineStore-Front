@@ -47,6 +47,26 @@
       <mat-error *ngIf="registerForm.controls.name.hasError('required')">La categoría es requerida...</mat-error>
     </mat-form-field>
 
+    <!-- ! mat-select of categories -->
+    <!-- <mat-form-field  class="create-game-input">
+      <mat-label>Categoría</mat-label>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <!-- ! mat-select of developers -->
+    <!-- <mat-form-field  class="create-game-input">
+      <mat-label>Desarrollador</mat-label>
+      <mat-select formControlName="developer">
+        <mat-option *ngFor="let developer of developers" [value]="developer.id">
+          {{developer.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
     <mat-form-field  class="create-game-input">
       <mat-label>Elija el Desarrollador del Juego</mat-label>
         <input matInput formControlName="developer" placeholder="Desarrollador" tabindex="1">

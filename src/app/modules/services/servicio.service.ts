@@ -44,7 +44,7 @@ export class ServicioService {
     }
   }
 
-  getAllTypesOfStuff(type?: string) {
+  getAllTypesOfStuff(type?: string): Observable<Object> | any {
     if (type === 'category') {
       return this._http.get(`${this.urlC}`);
     }
@@ -56,7 +56,7 @@ export class ServicioService {
     }
   }
 
-  createTypeOf(type: any, typeOf: string): Observable<Object> | any {
+  createTypeOf(type: any, typeOf: string) {
     if (typeOf === 'category') {
       return this._http.post(`${this.urlC}`, type);
     }
@@ -67,7 +67,7 @@ export class ServicioService {
       return this._http.post(`${this.urlG}`, type);
     }
     else {
-      console.error('Error: No se ha podido crear el tipo de elemento');
+      return this._http.get(`${this.urlG}`);
     }
   }
 

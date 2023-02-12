@@ -48,7 +48,7 @@ export class GameDetailsComponent implements OnInit {
           updatedAt: response.updatedAt,
         };
         this.trailer = this._sanitizer.bypassSecurityTrustHtml(
-          this.game.trailer
+            this.game.trailer
         );
       },
       error: (err) => {
