@@ -49,6 +49,27 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
+    <mat-form-field appearance="outline" class="register-input">
+      <input
+      type="file"
+      class="absolute top-0 z-10 h-full w-full cursor-pointer opacity-0"
+      accept=".jpeg,.jpg,.png"
+      (click)="onFileSelected($event)"
+    />
+      <mat-label>Subir Imagen</mat-label>
+      <input
+          matInput
+          cdkFocusInitial
+          class="z-0"
+          formControlName="image"
+      />
+      <mat-icon matSuffix class="mr-2">cloud_upload</mat-icon>
+      <mat-hint class="mat-form-field-hint-end"
+          >JPEG / JPG / PNG</mat-hint
+      >
+      <mat-error *ngIf="gameForm.controls.image.hasError('required')"></mat-error>
+    </mat-form-field>
+
   </div>
   <div mat-dialog-actions>
     <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
