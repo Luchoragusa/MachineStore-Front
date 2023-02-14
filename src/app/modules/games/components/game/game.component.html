@@ -4,7 +4,7 @@
       <mat-card-title class="toTheMiddle">{{game.name | uppercase}}</mat-card-title>
     </mat-card-header>
 
-      <img mat-card-image [src]="game.image" alt="{{game.name}} cover">
+      <img mat-card-image [src]="image" alt="{{game.name}} cover">
 
     <mat-card-actions >
       <a mat-flat-button color="accent" routerLink="/store/game/{{game.id}}" class="button">Ver detalles</a>

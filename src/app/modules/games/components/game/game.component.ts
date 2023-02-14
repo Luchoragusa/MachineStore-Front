@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { Game } from '../../interface/game';
 
 @Component({
@@ -10,9 +11,13 @@ import { Game } from '../../interface/game';
 export class GameComponent implements OnInit {
   @Input() game!: Game;
 
+  image!: string
+  
   constructor(private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.image = `${environment.url}/${this.game.image}`;
+  }
 
   onClick(): void {
     this._router.navigate(['/store/game/', this.game.id]);

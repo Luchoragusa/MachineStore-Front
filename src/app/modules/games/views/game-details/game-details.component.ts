@@ -6,6 +6,7 @@ import { Game } from '../../interface/game';
 import { UserGamesService } from '../../services/user-games.service';
 import { AlertDialogComponent } from 'src/app/modules/shared/alert-dialog/alert-dialog.component';
 import { ServicioService } from 'src/app/modules/services/servicio.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-game-details',
@@ -50,6 +51,8 @@ export class GameDetailsComponent implements OnInit {
         this.trailer = this._sanitizer.bypassSecurityTrustHtml(
             this.game.trailer
         );
+
+        this.game.image= `${environment.url}/${this.game.image}`;
       },
       error: (err) => {
         console.error(`Código de error ${err.status}: `, err.error.msg);
