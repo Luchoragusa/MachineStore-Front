@@ -1,13 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Category } from 'src/app/modules/categories/interface/category';
 import { Developer } from 'src/app/modules/developers/interface/developer';
 import { Game } from 'src/app/modules/games/interface/game';
 import { AlertifyService } from 'src/app/modules/services/alertify.service';
 import { ServicioService } from 'src/app/modules/services/servicio.service';
-import { AlertDialogComponent } from 'src/app/modules/shared/alert-dialog/alert-dialog.component';
 
 @Component({
   selector: 'app-create-game',
@@ -15,80 +13,53 @@ import { AlertDialogComponent } from 'src/app/modules/shared/alert-dialog/alert-
   styleUrls: ['./create-game.component.css']
 })
 export class CreateGameComponent implements OnInit {
+	gameForm: any;
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private sS: ServicioService,
     private alertify: AlertifyService,
-    private _router: Router,
-    public dialog: MatDialog
+    private _formBuilder: FormBuilder,
   ) { }
 
-  categories: Category[] = this.sS.getAllTypesOfStuff('category');
-  developers: Developer[] = this.sS.getAllTypesOfStuff('developer');
-
-  registerForm = new FormGroup({
-    name: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    image: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    category: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    developer: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    isAvailable: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    description: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    trailer: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    valoration: new FormControl('', {
-      validators: [Validators.required]
-    }),
-    date: new FormControl('', {}),
-  });
+  categories: Category[] = this.data.categories;
+	category !: number;
+  developers: Developer[] = this.data.developers;
+  developer !: number;
+	disabledButton = false;
 
   ngOnInit(): void {
+		this.gameForm = this._formBuilder.group({
+      name:         [''],
+      category:     [''],
+      developer:    [''],
+      description : [''],
+      trailer:      [''],
+      valoration:   [''],
+      isAvailable:  [''],
+			date: 				[''],
+    });
   }
 
-  onFileSelected(event: any) {
-    this.registerForm.controls['image'].setValue(event.target.files[0]);
-  }
+	addGame() {
+    if (this.gameForm.valid) {
+      // const gameEdited = {
+      //   id: this.game.id,
+      //   name: this.gameForm.value.name,
+      //   idCategory: this.category,
+      //   idDeveloper: this.developer,
+      //   isAvailable: this.gameForm.value.isAvailable,
+      //   description: this.gameForm.value.description,
+      //   trailer: this.gameForm.value.trailer,
+      //   valoration: this.gameForm.value.valoration,
+      // }
 
-  onSubmit() {
-    if (this.registerForm.valid) {
-      const formData = new FormData();
-      formData.append('name', this.registerForm.value.name || '');
-      formData.append('category', this.registerForm.value.category || '');
-      formData.append('developer', this.registerForm.value.developer || '');
-      formData.append('isAvailable', this.registerForm.value.isAvailable || '');
-      formData.append('description', this.registerForm.value.description || '');
-      formData.append('trailer', this.registerForm.value.trailer || '');
-      formData.append('valoration', this.registerForm.value.valoration || '');
+      // this.sS.updateTypeOf(gameEdited.id, gameEdited, 'game').subscribe((response: any) => {
+      //   this.alertify.success('Juego actualizado correctamente');
+      // });
 
-      this.sS.createTypeOf(formData, 'game').subscribe({
-        next: (response: any) => {
-          console.log(response);
-          this._router.navigate(['/store']);
-        },
-        error: (error: any) => {
-          console.log(error);
-          this.dialog.open(AlertDialogComponent, {
-            data: {
-              title: 'Error',
-              message: error.error.message
-            }
-          });
-        }
-      });
+    } else {
+      this.alertify.error('No se han podido actualizar los datos');
     }
-    console.log(this.registerForm.value);
   }
-
 }

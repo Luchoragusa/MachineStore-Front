@@ -8,6 +8,7 @@ import { Developer } from '../../developers/interface/developer';
 import { Game } from '../../games/interface/game';
 import { ServicioService } from '../../services/servicio.service';
 import { AlertDialogComponent } from '../../shared/alert-dialog/alert-dialog.component';
+import { CreateGameComponent } from './create-game/create-game.component';
 import { DeleteGameComponent } from './delete-game/delete-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
 
@@ -116,6 +117,17 @@ export class GamesListComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  addGame() {
+    this.dialog.open(CreateGameComponent, {
+      data: {
+        categories: this.categories,
+        developers: this.developers
+      }
+    }).afterClosed().subscribe(() => {
+      this.getGames();
+    });
   }
 
   editGame(game: Game) {

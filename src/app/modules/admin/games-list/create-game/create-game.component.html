@@ -1,100 +1,59 @@
-<div class="create-game">
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="create-game-content mat-elevation-z6" >
-    <h1 class="text">Registro de un juego</h1>
+<h1 mat-dialog-title>Editar Juego</h1>
 
-    <mat-form-field  class="create-game-input">
-      <mat-label>Ingrese el nombre del juego</mat-label>
-      <input matInput formControlName="name" placeholder="Name" tabindex="1">
-      <mat-error *ngIf="registerForm.controls.name.hasError('required')">El nombre es requerido...</mat-error>
+<form [formGroup]="gameForm" (ngSubmit)="addGame()">
+  <div mat-dialog-content>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input placeholder="Nombre" matInput formControlName="name">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="register-input">
-      <input
-      type="file"
-      class="absolute top-0 z-10 h-full w-full cursor-pointer opacity-0"
-      accept=".jpeg,.jpg,.png"
-      (click)="onFileSelected($event)"
-    />
-      <mat-label>Subir Imagen del Juego</mat-label>
-      <input
-          matInput
-          cdkFocusInitial
-          class="z-0"
-          formControlName="image"
-      />
-      <mat-icon matSuffix class="mr-2">cloud_upload</mat-icon>
-      <mat-hint class="mat-form-field-hint-end"
-          >JPEG / JPG / PNG</mat-hint
-      >
-      <mat-error *ngIf="registerForm.controls.image.hasError('required')"></mat-error>
+    <mat-form-field appearance="fill">
+      <mat-label>Descripcion</mat-label>
+      <textarea #message matInput placeholder="Ej: ...." formControlName="description"></textarea>
+      <mat-hint align="end">{{message.value.length}} / 500</mat-hint>
     </mat-form-field>
 
-    <mat-form-field  class="create-game-input">
-      <mat-label>Ingrese la Descripción del juego</mat-label>
-      <input matInput formControlName="description" placeholder="Descripción" tabindex="1">
-      <mat-error *ngIf="registerForm.controls.name.hasError('required')">La descripción es requerida...</mat-error>
+    <mat-form-field appearance="fill">
+      <mat-label>Embed</mat-label>
+      <textarea matInput placeholder="Ej: ...." formControlName="trailer"></textarea>
     </mat-form-field>
 
-    <mat-form-field  class="create-game-input">
-      <mat-label>Ingrese la Valoración del juego</mat-label>
-      <input matInput formControlName="valoration" placeholder="Valoracion" tabindex="1">
-      <mat-error *ngIf="registerForm.controls.name.hasError('required')">La valoración es requerida...</mat-error>
+    <mat-form-field appearance="fill">
+      <mat-label>Valoracion</mat-label>
+      <input type= number placeholder="5" matInput formControlName="valoration">
     </mat-form-field>
 
-    <mat-form-field  class="create-game-input">
-      <mat-label>Elija la Categoria del Juego</mat-label>
-        <input matInput formControlName="category" placeholder="Categoria" tabindex="1">
-      <mat-error *ngIf="registerForm.controls.name.hasError('required')">La categoría es requerida...</mat-error>
-    </mat-form-field>
-
-    <!-- ! mat-select of categories -->
-    <!-- <mat-form-field  class="create-game-input">
+    <mat-form-field appearance="fill">
       <mat-label>Categoría</mat-label>
-      <mat-select formControlName="category">
-        <mat-option *ngFor="let category of categories" [value]="category.id">
-          {{category.name}}
-        </mat-option>
+      <mat-select [(value)]="category">
+        <mat-option [value]="c.id" *ngFor="let c of categories">{{ c.name }}</mat-option>
       </mat-select>
-    </mat-form-field> -->
+    </mat-form-field>
 
-    <!-- ! mat-select of developers -->
-    <!-- <mat-form-field  class="create-game-input">
+    <mat-form-field appearance="fill">
       <mat-label>Desarrollador</mat-label>
-      <mat-select formControlName="developer">
-        <mat-option *ngFor="let developer of developers" [value]="developer.id">
-          {{developer.name}}
-        </mat-option>
+      <mat-select [(value)]="developer">
+        <mat-option [value]="d.id" *ngFor="let d of developers">{{ d.name }}</mat-option>
       </mat-select>
-    </mat-form-field> -->
-
-    <mat-form-field  class="create-game-input">
-      <mat-label>Elija el Desarrollador del Juego</mat-label>
-        <input matInput formControlName="developer" placeholder="Desarrollador" tabindex="1">
-      <mat-error *ngIf="registerForm.controls.developer.hasError('required')">El desarrollador es requerido...</mat-error>
     </mat-form-field>
 
-    <mat-form-field  class="create-game-input">
-      <mat-label>Ingrese el Trailer del Juego (YT link)</mat-label>
-        <textarea matInput formControlName="trailer" placeholder="Trailer"></textarea>
-      <mat-error *ngIf="registerForm.controls.trailer.hasError('required')">El trailer es requerido...</mat-error>
-    </mat-form-field>
+    <mat-label>Disponible</mat-label>
+    <p> <mat-checkbox formControlName= "isAvailable" [(ngModel)]="disabledButton"></mat-checkbox> </p>
 
-      <mat-label>Disponible</mat-label>
-      <p>
-        <mat-checkbox formControlName= "isAvailable"></mat-checkbox>
-      </p>
-
-    <!-- si isAvailable es false, entonces que aparezca un mat-form-field para poner la fecha de lanzamiento con date picker -->
-    <mat-form-field  class="create-game-input" *ngIf="!registerForm.controls.isAvailable.value">
-      <mat-label>Fecha de lanzamiento</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Fecha de lanzamiento" tabindex="1">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" [disabled]="disabledButton">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-    <button type="submit" mat-flat-button color="primary" class="create-game-submit" tabindex="3" [disabled]="!registerForm.valid">
-      Guardar Juego
-    </button>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
+    <button type="submit" mat-raised-button color="primary" cdkFocusInitial mat-dialog-close>Guardar</button>
+  </div>
 
-  </form>
-</div>
+</form>
+

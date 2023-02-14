@@ -1,43 +1,5 @@
-.create-game {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 88vh;
-}
-
-.text {
-  text-align: center;
-  color: #3f51b5;
-  font-weight: bold;
-}
-
-.create-game-content {
-  background-color:  rgb(157, 169, 238);
-  width: 300px;
-  padding: 5%;
-  border-radius: 5%;
-  border: 2px solid black;
-}
-
-.create-game-input {
-  width: 100%;
-  margin-bottom: 5%;
-}
-
-.create-game-submit {
-  margin-bottom: 3%;
-}
-
-@media only screen and (min-width: 768px) {
-  .create-game-content {
-    width: 375px;
-    padding: 4%;
+.mat-form-field {
+    display: block !important;
+    position: relative;
+    text-align: left;
   }
-}
-
-@media only screen and (min-width: 992px) {
-  .create-game-content {
-    padding: 2%;
-  }
-
-}

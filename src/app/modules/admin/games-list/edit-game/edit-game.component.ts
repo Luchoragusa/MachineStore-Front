@@ -77,7 +77,7 @@ export class EditGameComponent implements OnInit {
 
   }
 
-  guardarJuego() {
+  updateGame() {
     if (this.gameForm.valid) {
       const gameEdited = {
         id: this.game.id,
